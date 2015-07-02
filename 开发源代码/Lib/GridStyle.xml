@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Config>
+  <DataGridViews>
+    <DataGridView tablename="UserList">
+      <ColumnStyle name="colNo" displayname="序号" width="103" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colName" displayname="登录名称" width="104" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colState" displayname="状态" width="103" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemo" displayname="备注" width="103" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colID" displayname="ID" width="83" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colOperate" displayname="操作范围" width="60" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colBoxNames" displayname="可以操作的站点名称" width="71" visible="False" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="BoxtList">
+      <ColumnStyle name="colMemberID" displayname="ID" width="72" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colName" displayname="名称" width="87" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colIP" displayname="站点IP地址" width="87" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMask" displayname="站点子网掩码" width="88" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colNetIP" displayname="网管口IP" width="88" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colDispatch" displayname="调度台IP" width="88" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colDispatch2" displayname="调度台调试IP" width="88" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colRecordIP" displayname="录音服务器IP" width="89" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colTimeServerIP" displayname="时间服务器IP" width="88" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemo" displayname="备注" width="88" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSN" displayname="SN" width="79" visible="False" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="GroupList">
+      <ColumnStyle name="colGroupNo" displayname="序号" width="151" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colName" displayname=" 分组名称" width="151" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemo" displayname="分组描述" width="151" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemberCount" displayname="成员数" width="151" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colID" displayname="ID" width="87" visible="False" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="ListSip">
+      <ColumnStyle name="SipID" displayname="ID" width="74" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colSIPID" displayname="SIP中继编号" width="123" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPOutSub" displayname="市话出局号码前缀" width="122" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPOut" displayname="长途出局号码前缀" width="123" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPPort" displayname="本机端口号" width="122" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPIP" displayname="对端IP" width="123" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPPort2" displayname="对端端口号" width="122" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPIsPlay" displayname="是否放音" width="123" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSipState" displayname="配置状态" width="122" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSipOperateState" displayname="操作状态" width="0" visible="True" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="ListPri">
+      <ColumnStyle name="PriID" displayname="ID" width="74" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colPRIID" displayname="PRI中继编号" width="123" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPriOutSub" displayname="市话出局号码前缀" width="122" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPriOut" displayname="长途出局号码前缀" width="123" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colE1Number" displayname="E1端口号" width="122" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPriLinkID" displayname="链路ID" width="123" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSwitchType" displayname="交换机类型" width="122" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colUNIType" displayname="信令模式" width="123" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPriState" displayname="配置状态" width="122" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPriOperateState" displayname="操作状态" width="123" visible="True" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="MemberList">
+      <ColumnStyle name="colMemberID" displayname="用户ID" width="51" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colNo" displayname="序号" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colName" displayname="用户姓名" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colTel" displayname="电话号码" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colDept" displayname="部门" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPasswordType" displayname="密码模式" width="71" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPassword" displayname="用户密码" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colAuthority" displayname="用户权限" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colTelType" displayname="电话类型" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colLevel" displayname="优先级" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colUmtsImsi" displayname="标示码" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="ColUnCForwardNu" displayname="无条件呼叫前转号码" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colNoAnswerForward" displayname="无应答呼叫前转号码" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colBusyForward" displayname="遇忙前转号码" width="71" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPowerOffForward" displayname="关机前转号码" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colAssociateNum1" displayname="关联号码1" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colAssociateNum2" displayname="关联号码2" width="72" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemo" displayname="备注" width="72" visible="True" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="3GPDSList">
+      <ColumnStyle name="colID" displayname="ID" width="244" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colCode" displayname="分组网关编号" width="611" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colIP" displayname="分组网关IP" width="611" visible="True" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="3GStaticRouteList">
+      <ColumnStyle name="colID" displayname="ID" width="171" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colIP" displayname="静态路由IP" width="407" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMask" displayname="静态路由子网掩码" width="408" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSegwIP" displayname="静态路由网关IP" width="407" visible="True" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="3GFapList">
+      <ColumnStyle name="colID" displayname="ID" width="189" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colIndex" displayname="基站编号" width="200" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colName" displayname="基站名称" width="200" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colIdentify" displayname="基站标示码" width="407" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column2" displayname="基站IP" width="244" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colPhoneCount" displayname="手机数量" width="186" visible="True" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="DepartmentList">
+      <ColumnStyle name="colNo" displayname="  序号" width="268" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colName" displayname=" 部门名称" width="269" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemo" displayname="备注" width="268" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colID" displayname="ID" width="201" visible="False" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="SystemLog">
+      <ColumnStyle name="Column2" displayname="时间" width="69" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column7" displayname="站点名称" width="71" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column1" displayname="操作者" width="70" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column3" displayname="动作" width="55" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column4" displayname="标题" width="71" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column6" displayname="描述" width="70" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column5" displayname="备注" width="71" visible="True" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="DispatchLog">
+      <ColumnStyle name="Column2" displayname="时间" width="62" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column7" displayname="站点名称" width="61" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column1" displayname="操作者" width="62" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column3" displayname="动作" width="46" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colDispatchNumber" displayname="调度号码" width="61" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colDispatchNumbers" displayname="被调度号码" width="62" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column4" displayname="操作结果" width="62" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column5" displayname="备注" width="61" visible="True" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="vMemberList">
+      <ColumnStyle name="colID" displayname="序号" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colBoxID" displayname="BoxID" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_Name" displayname="姓名" width="75" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="coli_Number" displayname="号码" width="75" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colLevelID" displayname="LevelID" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colNumberTypeID" displayname="NumberTypeID" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_TellType" displayname="i_TellType" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_IsDispatch" displayname="i_IsDispatch" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colDepartmentID" displayname="DepartmentID" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_MAC" displayname="vc_MAC" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_Flag" displayname="i_Flag" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_Memo" displayname="备注" width="75" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="coli_supplementSerive" displayname="i_supplementSerive" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_Authority" displayname="i_Authority" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_NuPasswordType" displayname="i_NuPasswordType" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_NuPassword" displayname="i_NuPassword" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_UnCForwardNu" displayname="i_UnCForwardNu" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_NoAnswerForward" displayname="i_NoAnswerForward" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_PowerOffForward" displayname="i_PowerOffForward" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_BusyForward" displayname="i_BusyForward" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_DirectNum" displayname="i_DirectNum" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AssociateNum1" displayname="i_AssociateNum1" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AssociateNum2" displayname="i_AssociateNum2" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_UmtsKi" displayname="vc_UmtsKi" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_UmtsImsi" displayname="vc_UmtsImsi" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colNumberPasswordType" displayname="NumberPasswordType" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colNumberType" displayname="NumberType" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colTellAuthority" displayname="TellAuthority" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colTellType" displayname="TellType" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colIsDispatch" displayname="IsDispatch" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colLevelName" displayname="LevelName" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coldeptName" displayname="deptName" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colBoxName" displayname="BoxName" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_IP" displayname="vc_IP" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_SN" displayname="vc_SN" width="75" visible="False" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="GroupMemberList">
+      <ColumnStyle name="Column4" displayname="序号" width="153" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemberName" displayname=" 姓名" width="152" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemberNumber" displayname="号码" width="153" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemebrMemo" displayname="备注" width="152" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemberID" displayname="ID" width="88" visible="False" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="CalledRuleList">
+      <ColumnStyle name="dataGridViewTextBoxColumn13" displayname="ID" width="115" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colSIPID" displayname="号码前缀" width="204" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPOut" displayname="呼叫类型" width="203" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPPort" displayname="呼叫子类型" width="204" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colSIPPort2" displayname="SIP中继编号" width="204" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column8" displayname="PRI中继编号" width="203" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="Column1" displayname="删除号码位数" width="204" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colMemo" displayname="备注" width="132" visible="False" alignment="0" show="True" />
+    </DataGridView>
+    <DataGridView tablename="vAlarmLogList">
+      <ColumnStyle name="colID" displayname="序号" width="75" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colBoxID" displayname="BoxID" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coldt_DateTime" displayname="产生时间" width="75" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colAlarmTypeID" displayname="AlarmTypeID" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_Memo" displayname="vc_Memo" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AlarmSeriesNumber" displayname="i_AlarmSeriesNumber" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AlarmInfo" displayname="告警ID" width="75" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="coli_AlarmInfoDetail" displayname="i_AlarmInfoDetail" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AlarmEntityType" displayname="i_AlarmEntityType" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AlarmEntityInstance" displayname="i_AlarmEntityInstance" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AlarmClass" displayname="i_AlarmClass" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AlarmSeverity" displayname="i_AlarmSeverity" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="coli_AlarmAckFlag" displayname="i_AlarmAckFlag" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colAlarmClass" displayname="AlarmClass" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colAlarmSeverity" displayname="告警类型" width="75" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colAlarmAck" displayname="AlarmAck" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colAlarmEntityInstance" displayname="AlarmEntityInstance" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colAlarmInfo" displayname="告警信息" width="75" visible="True" alignment="0" show="True" />
+      <ColumnStyle name="colAlarmDetail" displayname="AlarmDetail" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colAlarmEntityType" displayname="AlarmEntityType" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colBoxName" displayname="BoxName" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_IP" displayname="vc_IP" width="75" visible="False" alignment="0" show="True" />
+      <ColumnStyle name="colvc_SN" displayname="vc_SN" width="75" visible="False" alignment="0" show="True" />
+    </DataGridView>
+  </DataGridViews>
+</Config>

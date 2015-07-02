@@ -1,0 +1,41 @@
+﻿/*设置sip激活*/
+NETMGR_API BOOL MBOX_SetSipTrunkAction(MBOX_HANDLE handle,int,int);
+
+参数说明：
+参数2：输入参数，表示SipTrunk的标识
+参数2：输入参数，表示激活(1)或去激活
+(2)
+
+/*设置SIP中继是否支持心跳*/
+NETMGR_API BOOL MBOX_SetSipTrunkHeartBeatEnable(MBOX_HANDLE handle,int,int);
+
+参数说明：
+参数2：输入参数，表示SipTrunk的标识
+参数2：输入参数，表示支持(1)或去不支持(0)
+
+/*
+
+
+设置PRI中继激活*/
+NETMGR_API BOOL MBOX_SetPriTrunkAction(MBOX_HANDLE handle,int,int);
+参数说明：
+参数2：输入参数，表示PriTrunk的标识
+参数2：输入参数，表示激活(1)或去激活
+
+
+(2)
+
+
+/*设置时钟源*/
+NETMGR_API BOOL MBOX_SetClockSource(MBOX_HANDLE ,CLOCKSOURCE);
+见头文件定义
+
+
+
+/*获取时钟源*/
+NETMGR_API BOOL MBOX_GetClockSource(MBOX_HANDLE ,int& currentClockSrc,int& standbyClockSrc);
+参数说明：
+参数2：输入参数，当前时钟源
+参数2：输入参数，备用时钟源
+
+

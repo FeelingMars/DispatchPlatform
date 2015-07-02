@@ -1,0 +1,53 @@
+关于获取信息接口的使用说明
+
+NETMGR_API BOOL MBOX_GetRouteGroup(MBOX_HANDLE handle,char buffer[],uint32 size,uint32& ioRouteGroup)
+参数1：[ 输入]设备登陆句柄
+参数2：[ 输出]返回路由组信息的格式化文本
+参数3：[ 输入]buffer的字节数
+参数4: [ 输出]返回路由组的数量
+
+buffer说明：
+@格式化字符串："%d,%s;"，释意 "路由组ID,路由组名称"
+
+
+NETMGR_API BOOL MBOX_GetRouting(MBOX_HANDLE handle,char[],uint32,int&);  //获取路由信息
+buffer说明：
+@格式化字符串："%d,%d,%d,%s;" ，释义 "路由ID,路由类型,路由组ID,路由名称"
+
+
+NETMGR_API BOOL MBOX_GetCallSource(MBOX_HANDLE handle,char[],uint32,int&);//获取呼叫源
+buffer说明：
+@格式化字符串："%d,%d,%d,%s;" ，释义 "路由ID,路由类型,路由组ID,路由名称"
+
+@格式化字符串："%d,%d,%d;"，释义"呼叫源ID,主类型,子类型"
+
+NETMGR_API BOOL MBOX_GetRoutingRule(MBOX_HANDLE handle,char[],uint32,int&);//获取路由规则
+buffer说明：
+@格式化字符串："%d,%d,%d;"，释义 "源路由选择索引,目的路由选择索引,路由ID"
+
+NETMGR_API BOOL MBOX_GetCallSourceRule(MBOX_HANDLE handle,char[],uint32,int&);//呼叫源规则
+buffer说明：
+@格式化字符串："%d,%d,%d;"，释义"呼叫源索引,服务类型,收号长度);
+
+NETMGR_API BOOL MBOX_GetSipSap(MBOX_HANDLE handle,char[],uint32,int&);//获取sip访问点
+buffer说明：
+@格式化字符串："%d,%d,%d;",sipSapID,sipSapPort,netProtocal);，释义 "访问点ID,端口号,通信协议"
+
+NETMGR_API BOOL MBOX_GetSipTrunk(MBOX_HANDLE handle,char[],uint32,int&);//获取sip中继
+buffer说明：
+@格式化字符串："%d,%d,%d,%d,%d,%d,%d,%s,%d,%d,%d;",
+			   释义:"trunkID,trunkInterfaceType,trunkRoutingID,
+				trunkPriority,trunkMaxChannel,trunkSipSapID,
+				trunkPlayTone,peerPort,configureStatus,operationStatus)参见头文件
+				
+NETMGR_API BOOL MBOX_GetPriTrunk(MBOX_HANDLE handle,char[],uint32,int&);//获取PRI中继
+buffer说明：
+@格式化字符串："%d,%d,%d,%d,%d,%d,%d,%d,%d;"
+
+			 释义:"trunkID,trunkRoutingID,trunkInterfaceType,
+				trunkPriority,linkType,PbxType,
+				configureStatus,operationStatus,linkCount"参见头文件注释
+
+
+
+

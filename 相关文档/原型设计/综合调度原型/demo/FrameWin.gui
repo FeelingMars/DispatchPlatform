@@ -1,0 +1,474 @@
+<Screen
+	CID = "1442919491"
+	AppID = "2"
+	AppVer = "4.1.109.0"
+	DocID = ""
+	HasCanvas = "0"
+	Width = "1440"
+	Height = "900"
+	NextCID = "6"
+	RepresentativeRefID = "912487884"
+	UseDefRepresentative = "1">
+	<Elements
+		CID = "1">
+		<Element
+			CID = "912487884"
+			Type = "Bitmap"
+			X = "0"
+			Y = "0"
+			Width = "1440"
+			Height = "900"
+			Flags = "0"
+			RootPath = "$Container"
+			Filename = "view\1固话.jpg"
+			Placement = "Stretch"
+			HorzAlign = "Left"
+			VertAlign = "Top"
+			ClipLeft = "0"
+			ClipRight = "0"
+			ClipTop = "0"
+			ClipBottom = "0"/>
+		<Element
+			CID = "627247380"
+			Type = "NavigationSwitchPlaceholder"
+			X = "-7"
+			Y = "-7"
+			Width = "16"
+			Height = "16"
+			Flags = "3"
+			Alignment = "TopLeft"
+			AlignTo = "AnchorBox"/>
+		<Element
+			CID = "418188012"
+			Type = "Bitmap"
+			X = "1763"
+			Y = "-619"
+			Width = "1440"
+			Height = "900"
+			Flags = "0"
+			RootPath = "$Container"
+			Filename = "view\2手机.jpg"
+			Placement = "Stretch"
+			HorzAlign = "Left"
+			VertAlign = "Top"
+			ClipLeft = "0"
+			ClipRight = "0"
+			ClipTop = "0"
+			ClipBottom = "0"/>
+		<Element
+			CID = "418195497"
+			Type = "Bitmap"
+			X = "1858"
+			Y = "634"
+			Width = "1440"
+			Height = "900"
+			Flags = "0"
+			RootPath = "$Container"
+			Filename = "view\3广播.jpg"
+			Placement = "Stretch"
+			HorzAlign = "Left"
+			VertAlign = "Top"
+			ClipLeft = "0"
+			ClipRight = "0"
+			ClipTop = "0"
+			ClipBottom = "0"/>
+		<Element
+			CID = "418216166"
+			Type = "NavigationOverlay"
+			X = "1295"
+			Y = "131"
+			Width = "139"
+			Height = "48"
+			Flags = "0"/>
+		<Element
+			CID = "418202377"
+			Type = "NavigationOverlay"
+			X = "1296"
+			Y = "204"
+			Width = "139"
+			Height = "48"
+			Flags = "0"/>
+		<Element
+			CID = "1729890283"
+			Type = "NavigationOverlay"
+			X = "3057"
+			Y = "-557"
+			Width = "139"
+			Height = "50"
+			Flags = "0"/>
+		<Element
+			CID = "1729907066"
+			Type = "NavigationOverlay"
+			X = "3054"
+			Y = "-418"
+			Width = "143"
+			Height = "50"
+			Flags = "0"/>
+		<Element
+			CID = "1729894620"
+			Type = "NavigationOverlay"
+			X = "3152"
+			Y = "698"
+			Width = "139"
+			Height = "47"
+			Flags = "0"/>
+		<Element
+			CID = "1729900796"
+			Type = "NavigationOverlay"
+			X = "3156"
+			Y = "768"
+			Width = "136"
+			Height = "47"
+			Flags = "0"/>
+		<Element
+			CID = "266872446"
+			Type = "Bitmap"
+			X = "3720"
+			Y = "-43"
+			Width = "1440"
+			Height = "900"
+			Flags = "0"
+			RootPath = "$Container"
+			Filename = "view\4区域.jpg"
+			Placement = "Stretch"
+			HorzAlign = "Left"
+			VertAlign = "Top"
+			ClipLeft = "0"
+			ClipRight = "0"
+			ClipTop = "0"
+			ClipBottom = "0"/>
+		<Element
+			CID = "266876442"
+			Type = "NavigationOverlay"
+			X = "1287"
+			Y = "596"
+			Width = "153"
+			Height = "103"
+			Flags = "0"/>
+		<Element
+			CID = "266891019"
+			Type = "NavigationOverlay"
+			X = "3048"
+			Y = "-25"
+			Width = "155"
+			Height = "104"
+			Flags = "0"/>
+		<Element
+			CID = "266894047"
+			Type = "NavigationOverlay"
+			X = "3147"
+			Y = "1229"
+			Width = "151"
+			Height = "101"
+			Flags = "0"/>
+		<Element
+			CID = "266873242"
+			Type = "NavigationOverlay"
+			X = "4972"
+			Y = "-43"
+			Width = "95"
+			Height = "54"
+			Flags = "0"/>
+		<Element
+			CID = "266863664"
+			Type = "StoryboardCloseBox"
+			X = "5064"
+			Y = "-199"
+			Width = "90"
+			Height = "30"
+			Flags = "3"/>
+		<Element
+			CID = "266889164"
+			Type = "StoryboardExitBox"
+			X = "3727"
+			Y = "-402"
+			Width = "90"
+			Height = "30"
+			Flags = "3"/>
+		<Element
+			CID = "266873808"
+			Type = "NavigationOverlay"
+			X = "5072"
+			Y = "-43"
+			Width = "88"
+			Height = "51"
+			Flags = "0"/>
+		<Element
+			CID = "1510097444"
+			Type = "NavigationOverlay"
+			X = "3098"
+			Y = "-614"
+			Width = "100"
+			Height = "41"
+			Flags = "0"/>
+		<Element
+			CID = "1510092779"
+			Type = "NavigationOverlay"
+			X = "3192"
+			Y = "634"
+			Width = "101"
+			Height = "49"
+			Flags = "0"/>
+		<Element
+			CID = "1510108919"
+			Type = "NavigationOverlay"
+			X = "1338"
+			Y = "0"
+			Width = "102"
+			Height = "49"
+			Flags = "0"/>
+		<Element
+			CID = "1510094879"
+			Type = "StoryboardExitBox"
+			X = "1467"
+			Y = "-207"
+			Width = "90"
+			Height = "30"
+			Flags = "3"/>
+		<Element
+			CID = "1725318029"
+			Type = "NavigationOverlay"
+			X = "4330"
+			Y = "421"
+			Width = "179"
+			Height = "99"
+			Flags = "0"/>
+		<Element
+			CID = "1725323393"
+			Type = "NavigationOverlay"
+			X = "4330"
+			Y = "520"
+			Width = "179"
+			Height = "85"
+			Flags = "0"/>
+		<Element
+			CID = "1725318095"
+			Type = "NavigationOverlay"
+			X = "4332"
+			Y = "621"
+			Width = "179"
+			Height = "85"
+			Flags = "0"/>
+		<Element
+			CID = "1725304472"
+			Type = "NavigationOverlay"
+			X = "4520"
+			Y = "427"
+			Width = "179"
+			Height = "85"
+			Flags = "0"/>
+		<Element
+			CID = "1964517006"
+			Type = "NavigationOverlay"
+			X = "4524"
+			Y = "523"
+			Width = "179"
+			Height = "85"
+			Flags = "0"/>
+		<Element
+			CID = "951933544"
+			Type = "NavigationOverlay"
+			X = "4518"
+			Y = "619"
+			Width = "179"
+			Height = "85"
+			Flags = "0"/>
+		<Element
+			CID = "951934359"
+			Type = "NavigationOverlay"
+			X = "4712"
+			Y = "427"
+			Width = "179"
+			Height = "85"
+			Flags = "0"/>
+		<Element
+			CID = "951910917"
+			Type = "NavigationOverlay"
+			X = "4712"
+			Y = "525"
+			Width = "179"
+			Height = "85"
+			Flags = "0"/>
+		<Element
+			CID = "951921726"
+			Type = "NavigationOverlay"
+			X = "4712"
+			Y = "621"
+			Width = "179"
+			Height = "85"
+			Flags = "0"/>
+	</Elements>
+	<Connections
+		CID = "2">
+		<Connection
+			CID = "1884769912"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessSwitch"
+			SourceSubItemID = ""
+			SourceRefID = "1729900796"
+			TargetRefID = "418188012"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "1884756572"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessSwitch"
+			SourceSubItemID = ""
+			SourceRefID = "1729894620"
+			TargetRefID = "912487884"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "1884751828"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessSwitch"
+			SourceSubItemID = ""
+			SourceRefID = "418216166"
+			TargetRefID = "418188012"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "1884770675"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessSwitch"
+			SourceSubItemID = ""
+			SourceRefID = "418202377"
+			TargetRefID = "418195497"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "680947248"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessSwitch"
+			SourceSubItemID = ""
+			SourceRefID = "1729890283"
+			TargetRefID = "912487884"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "680942626"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessSwitch"
+			SourceSubItemID = ""
+			SourceRefID = "1729907066"
+			TargetRefID = "418195497"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "266893421"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Close"
+			SubType = ""
+			SourceSubItemID = ""
+			SourceRefID = "266873242"
+			TargetRefID = "266863664"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "266891914"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessShow"
+			SourceSubItemID = ""
+			SourceRefID = "266891019"
+			TargetRefID = "266872446"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "266864636"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessShow"
+			SourceSubItemID = ""
+			SourceRefID = "266876442"
+			TargetRefID = "266872446"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "266872316"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Navigation"
+			SubType = "ModelessShow"
+			SourceSubItemID = ""
+			SourceRefID = "266894047"
+			TargetRefID = "266872446"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "871588969"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Exit"
+			SubType = ""
+			SourceSubItemID = ""
+			SourceRefID = "266873808"
+			TargetRefID = "266889164"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "1510091631"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Exit"
+			SubType = ""
+			SourceSubItemID = ""
+			SourceRefID = "1510108919"
+			TargetRefID = "1510094879"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "1510080530"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Exit"
+			SubType = ""
+			SourceSubItemID = ""
+			SourceRefID = "1510097444"
+			TargetRefID = "266889164"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+		<Connection
+			CID = "1510106530"
+			Layer = "Storyboard"
+			Trigger = "LeftClick"
+			Type = "Exit"
+			SubType = ""
+			SourceSubItemID = ""
+			SourceRefID = "1510092779"
+			TargetRefID = "266889164"
+			ConLineWidth = "2"
+			ConLineColour = "0,0,0,0,0"/>
+	</Connections>
+	<Groups
+		CID = "3"/>
+	<SelectionGroups
+		CID = "4"/>
+	<Notes
+		CID = "5">
+		<Note
+			CID = "1442907729"
+			Name = "Description"
+			NextCID = "2">
+			<Text
+				CID = "1">
+				
+			</Text>
+		</Note>
+	</Notes>
+</Screen>
