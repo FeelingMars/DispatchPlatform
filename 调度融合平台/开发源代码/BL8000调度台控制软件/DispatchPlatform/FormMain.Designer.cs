@@ -31,8 +31,6 @@
             this.components = new System.ComponentModel.Container();
             DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable2 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable4 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
-            DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
-            DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable3 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable4 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabItemColorTable superTabItemColorTable3 = new DevComponents.DotNetBar.Rendering.SuperTabItemColorTable();
@@ -49,21 +47,25 @@
             DevComponents.DotNetBar.Rendering.SuperTabColorStates superTabColorStates7 = new DevComponents.DotNetBar.Rendering.SuperTabColorStates();
             DevComponents.DotNetBar.Rendering.SuperTabItemStateColorTable superTabItemStateColorTable9 = new DevComponents.DotNetBar.Rendering.SuperTabItemStateColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable8 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
+            DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
+            DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable3 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.superTabControlMain = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
-            this.superTabControlMeeting = new DevComponents.DotNetBar.SuperTabControl();
-            this.superTabItemMeeting = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabControlPanel1 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.superTabControlDispatch = new DevComponents.DotNetBar.SuperTabControl();
             this.superTabControlPanel5 = new DevComponents.DotNetBar.SuperTabControlPanel();
             this.stiAllMember = new DevComponents.DotNetBar.SuperTabItem();
             this.superTabItemDispatch = new DevComponents.DotNetBar.SuperTabItem();
+            this.superTabControlPanel2 = new DevComponents.DotNetBar.SuperTabControlPanel();
+            this.superTabControlMeeting = new DevComponents.DotNetBar.SuperTabControl();
+            this.superTabItemMeeting = new DevComponents.DotNetBar.SuperTabItem();
             this.panelAll = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.waitControl1 = new DispatchPlatform.Control.WaitControl();
             this.imgBtnBroadcast = new DevComponents.DotNetBar.ButtonX();
             this.imgBtnMeeting = new DevComponents.DotNetBar.ButtonX();
+            this.operateLog1 = new DispatchPlatform.Control.OperateLog();
             this.imgBtnDispatch = new DevComponents.DotNetBar.ButtonX();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelBottomAndCommand = new System.Windows.Forms.Panel();
@@ -90,6 +92,8 @@
             this.lblListenCount = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.lblAllCount = new System.Windows.Forms.Label();
+            this.cRight = new DispatchPlatform.SingleUserControl();
+            this.cLeft = new DispatchPlatform.SingleUserControl();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -115,6 +119,7 @@
             this.toolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem9 = new System.Windows.Forms.ToolStripMenuItem();
             this.panelTop = new System.Windows.Forms.Panel();
+            this.smallTimeControl2 = new DispatchPlatform.Control.SmallTimeControl();
             this.btnVideoSize = new DevComponents.DotNetBar.ButtonX();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnTelLog = new DevComponents.DotNetBar.ButtonX();
@@ -131,18 +136,14 @@
             this.btnExit = new DevComponents.DotNetBar.ButtonX();
             this.btnLock = new DevComponents.DotNetBar.ButtonX();
             this.lblTitle = new DevComponents.DotNetBar.LabelX();
-            this.waitControl1 = new DispatchPlatform.Control.WaitControl();
-            this.operateLog1 = new DispatchPlatform.Control.OperateLog();
-            this.cRight = new DispatchPlatform.SingleUserControl();
-            this.cLeft = new DispatchPlatform.SingleUserControl();
-            this.smallTimeControl2 = new DispatchPlatform.Control.SmallTimeControl();
+            this.btnRegionView = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlMain)).BeginInit();
             this.superTabControlMain.SuspendLayout();
-            this.superTabControlPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.superTabControlMeeting)).BeginInit();
             this.superTabControlPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlDispatch)).BeginInit();
             this.superTabControlDispatch.SuspendLayout();
+            this.superTabControlPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.superTabControlMeeting)).BeginInit();
             this.panelAll.SuspendLayout();
             this.panelMain.SuspendLayout();
             this.panelRight.SuspendLayout();
@@ -200,60 +201,6 @@
             this.superTabControlMain.TabsVisible = false;
             this.superTabControlMain.Text = "superTabControl1";
             this.superTabControlMain.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
-            // 
-            // superTabControlPanel2
-            // 
-            this.superTabControlPanel2.Controls.Add(this.superTabControlMeeting);
-            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlPanel2.Location = new System.Drawing.Point(66, 0);
-            this.superTabControlPanel2.Name = "superTabControlPanel2";
-            this.superTabControlPanel2.Size = new System.Drawing.Size(1057, 757);
-            this.superTabControlPanel2.TabIndex = 0;
-            this.superTabControlPanel2.TabItem = this.superTabItemMeeting;
-            // 
-            // superTabControlMeeting
-            // 
-            this.superTabControlMeeting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            // 
-            // 
-            // 
-            // 
-            // 
-            // 
-            this.superTabControlMeeting.ControlBox.CloseBox.Name = "";
-            // 
-            // 
-            // 
-            this.superTabControlMeeting.ControlBox.MenuBox.Name = "";
-            this.superTabControlMeeting.ControlBox.Name = "";
-            this.superTabControlMeeting.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
-            this.superTabControlMeeting.ControlBox.MenuBox,
-            this.superTabControlMeeting.ControlBox.CloseBox});
-            this.superTabControlMeeting.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.superTabControlMeeting.Location = new System.Drawing.Point(0, 0);
-            this.superTabControlMeeting.Name = "superTabControlMeeting";
-            this.superTabControlMeeting.ReorderTabsEnabled = false;
-            this.superTabControlMeeting.SelectedTabFont = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
-            this.superTabControlMeeting.SelectedTabIndex = 0;
-            this.superTabControlMeeting.Size = new System.Drawing.Size(1057, 757);
-            this.superTabControlMeeting.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Bottom;
-            this.superTabControlMeeting.TabFont = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
-            this.superTabControlMeeting.TabIndex = 0;
-            superTabLinearGradientColorTable3.Colors = new System.Drawing.Color[] {
-        System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48))))),
-        System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))))};
-            superTabColorTable1.Background = superTabLinearGradientColorTable3;
-            this.superTabControlMeeting.TabStripColor = superTabColorTable1;
-            this.superTabControlMeeting.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.OneNote2007;
-            this.superTabControlMeeting.Text = "superTabControl5";
-            // 
-            // superTabItemMeeting
-            // 
-            this.superTabItemMeeting.AttachedControl = this.superTabControlPanel2;
-            this.superTabItemMeeting.GlobalItem = false;
-            this.superTabItemMeeting.Name = "superTabItemMeeting";
-            this.superTabItemMeeting.SelectedTabFont = new System.Drawing.Font("宋体", 14.25F);
-            this.superTabItemMeeting.Text = "会议";
             // 
             // superTabControlPanel1
             // 
@@ -362,6 +309,60 @@
             this.superTabItemDispatch.Text = "调度";
             this.superTabItemDispatch.TextAlignment = DevComponents.DotNetBar.eItemAlignment.Center;
             // 
+            // superTabControlPanel2
+            // 
+            this.superTabControlPanel2.Controls.Add(this.superTabControlMeeting);
+            this.superTabControlPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlPanel2.Location = new System.Drawing.Point(66, 0);
+            this.superTabControlPanel2.Name = "superTabControlPanel2";
+            this.superTabControlPanel2.Size = new System.Drawing.Size(1057, 757);
+            this.superTabControlPanel2.TabIndex = 0;
+            this.superTabControlPanel2.TabItem = this.superTabItemMeeting;
+            // 
+            // superTabControlMeeting
+            // 
+            this.superTabControlMeeting.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            // 
+            // 
+            // 
+            // 
+            // 
+            // 
+            this.superTabControlMeeting.ControlBox.CloseBox.Name = "";
+            // 
+            // 
+            // 
+            this.superTabControlMeeting.ControlBox.MenuBox.Name = "";
+            this.superTabControlMeeting.ControlBox.Name = "";
+            this.superTabControlMeeting.ControlBox.SubItems.AddRange(new DevComponents.DotNetBar.BaseItem[] {
+            this.superTabControlMeeting.ControlBox.MenuBox,
+            this.superTabControlMeeting.ControlBox.CloseBox});
+            this.superTabControlMeeting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.superTabControlMeeting.Location = new System.Drawing.Point(0, 0);
+            this.superTabControlMeeting.Name = "superTabControlMeeting";
+            this.superTabControlMeeting.ReorderTabsEnabled = false;
+            this.superTabControlMeeting.SelectedTabFont = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
+            this.superTabControlMeeting.SelectedTabIndex = 0;
+            this.superTabControlMeeting.Size = new System.Drawing.Size(1057, 757);
+            this.superTabControlMeeting.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Bottom;
+            this.superTabControlMeeting.TabFont = new System.Drawing.Font("宋体", 18F, System.Drawing.FontStyle.Bold);
+            this.superTabControlMeeting.TabIndex = 0;
+            superTabLinearGradientColorTable3.Colors = new System.Drawing.Color[] {
+        System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48))))),
+        System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))))};
+            superTabColorTable1.Background = superTabLinearGradientColorTable3;
+            this.superTabControlMeeting.TabStripColor = superTabColorTable1;
+            this.superTabControlMeeting.TabStyle = DevComponents.DotNetBar.eSuperTabStyle.OneNote2007;
+            this.superTabControlMeeting.Text = "superTabControl5";
+            // 
+            // superTabItemMeeting
+            // 
+            this.superTabItemMeeting.AttachedControl = this.superTabControlPanel2;
+            this.superTabItemMeeting.GlobalItem = false;
+            this.superTabItemMeeting.Name = "superTabItemMeeting";
+            this.superTabItemMeeting.SelectedTabFont = new System.Drawing.Font("宋体", 14.25F);
+            this.superTabItemMeeting.Text = "会议";
+            // 
             // panelAll
             // 
             this.panelAll.Controls.Add(this.panelMain);
@@ -386,6 +387,7 @@
             // panelRight
             // 
             this.panelRight.BackgroundImage = global::DispatchPlatform.Properties.Resources.MainBackGround;
+            this.panelRight.Controls.Add(this.btnRegionView);
             this.panelRight.Controls.Add(this.waitControl1);
             this.panelRight.Controls.Add(this.imgBtnBroadcast);
             this.panelRight.Controls.Add(this.imgBtnMeeting);
@@ -396,6 +398,17 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(160, 757);
             this.panelRight.TabIndex = 51;
+            // 
+            // waitControl1
+            // 
+            this.waitControl1.BackColor = System.Drawing.Color.Transparent;
+            this.waitControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("waitControl1.BackgroundImage")));
+            this.waitControl1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.waitControl1.Location = new System.Drawing.Point(0, 210);
+            this.waitControl1.Name = "waitControl1";
+            this.waitControl1.ShowTitle = true;
+            this.waitControl1.Size = new System.Drawing.Size(160, 160);
+            this.waitControl1.TabIndex = 49;
             // 
             // imgBtnBroadcast
             // 
@@ -428,6 +441,15 @@
             this.imgBtnMeeting.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.imgBtnMeeting.TabIndex = 5;
             this.imgBtnMeeting.Click += new System.EventHandler(this.imgBtnMeeting_Click);
+            // 
+            // operateLog1
+            // 
+            this.operateLog1.BackColor = System.Drawing.Color.Transparent;
+            this.operateLog1.IsLog = true;
+            this.operateLog1.Location = new System.Drawing.Point(3, 663);
+            this.operateLog1.Name = "operateLog1";
+            this.operateLog1.Size = new System.Drawing.Size(154, 88);
+            this.operateLog1.TabIndex = 10;
             // 
             // imgBtnDispatch
             // 
@@ -776,6 +798,76 @@
             this.lblAllCount.TabIndex = 57;
             this.lblAllCount.Text = "0";
             // 
+            // cRight
+            // 
+            this.cRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.cRight.BackgroundImage = global::DispatchPlatform.Properties.Resources.MainDispatchBackground;
+            this.cRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cRight.Checked = false;
+            this.cRight.ControlEnable = true;
+            this.cRight.DepartmentID = 0;
+            this.cRight.DepartmentName = null;
+            this.cRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.cRight.FapIP = null;
+            this.cRight.ForeColor = System.Drawing.Color.Navy;
+            this.cRight.ID = 0;
+            this.cRight.IsAlarm = false;
+            this.cRight.IsCalling = false;
+            this.cRight.IsDispatch = true;
+            this.cRight.IsMeeting = false;
+            this.cRight.IsOnline = 1;
+            this.cRight.Location = new System.Drawing.Point(823, 0);
+            this.cRight.MemberLevel = 0;
+            this.cRight.MemberName = "cRight";
+            this.cRight.Name = "cRight";
+            this.cRight.NameColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
+            this.cRight.Number = ((long)(0));
+            this.cRight.NumberState = "空闲";
+            this.cRight.Padding = new System.Windows.Forms.Padding(1);
+            this.cRight.PeerNumber = "0";
+            this.cRight.PeerNumberColor = System.Drawing.Color.Black;
+            this.cRight.Size = new System.Drawing.Size(230, 105);
+            this.cRight.TabIndex = 47;
+            this.cRight.TellType = CommControl.PublicEnums.EnumTelType.调度席话机;
+            this.cRight.UserLineStatus = DispatchPlatform.TalkControl.EnumUserLineStatus.Idle;
+            this.cRight.UserRecordStatus = DispatchPlatform.TalkControl.EnumRecordStatus.OFF;
+            this.cRight.Click += new System.EventHandler(this.cRight_Click);
+            // 
+            // cLeft
+            // 
+            this.cLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
+            this.cLeft.BackgroundImage = global::DispatchPlatform.Properties.Resources.MainDispatchBackground;
+            this.cLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.cLeft.Checked = false;
+            this.cLeft.ControlEnable = true;
+            this.cLeft.DepartmentID = 0;
+            this.cLeft.DepartmentName = null;
+            this.cLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.cLeft.FapIP = null;
+            this.cLeft.ForeColor = System.Drawing.Color.Navy;
+            this.cLeft.ID = 0;
+            this.cLeft.IsAlarm = false;
+            this.cLeft.IsCalling = false;
+            this.cLeft.IsDispatch = false;
+            this.cLeft.IsMeeting = false;
+            this.cLeft.IsOnline = 1;
+            this.cLeft.Location = new System.Drawing.Point(0, 0);
+            this.cLeft.MemberLevel = 0;
+            this.cLeft.MemberName = "cLeft";
+            this.cLeft.Name = "cLeft";
+            this.cLeft.NameColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
+            this.cLeft.Number = ((long)(0));
+            this.cLeft.NumberState = "空闲";
+            this.cLeft.Padding = new System.Windows.Forms.Padding(1);
+            this.cLeft.PeerNumber = "0";
+            this.cLeft.PeerNumberColor = System.Drawing.Color.Black;
+            this.cLeft.Size = new System.Drawing.Size(230, 105);
+            this.cLeft.TabIndex = 0;
+            this.cLeft.TellType = CommControl.PublicEnums.EnumTelType.调度席话机;
+            this.cLeft.UserLineStatus = DispatchPlatform.TalkControl.EnumUserLineStatus.Idle;
+            this.cLeft.UserRecordStatus = DispatchPlatform.TalkControl.EnumRecordStatus.OFF;
+            this.cLeft.Click += new System.EventHandler(this.cLeft_Click);
+            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -803,7 +895,6 @@
             this.行8列ToolStripMenuItem3});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(115, 246);
-            this.contextMenuStrip1.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip1_Opening);
             // 
             // 行5列ToolStripMenuItem3
             // 
@@ -1006,6 +1097,16 @@
             this.panelTop.Name = "panelTop";
             this.panelTop.Size = new System.Drawing.Size(1283, 50);
             this.panelTop.TabIndex = 3;
+            // 
+            // smallTimeControl2
+            // 
+            this.smallTimeControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.smallTimeControl2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("smallTimeControl2.BackgroundImage")));
+            this.smallTimeControl2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.smallTimeControl2.Location = new System.Drawing.Point(303, 2);
+            this.smallTimeControl2.Name = "smallTimeControl2";
+            this.smallTimeControl2.Size = new System.Drawing.Size(190, 46);
+            this.smallTimeControl2.TabIndex = 0;
             // 
             // btnVideoSize
             // 
@@ -1274,106 +1375,21 @@
             this.lblTitle.TabIndex = 54;
             this.lblTitle.Text = "语音调度系统";
             // 
-            // waitControl1
+            // btnRegionView
             // 
-            this.waitControl1.BackColor = System.Drawing.Color.Transparent;
-            this.waitControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("waitControl1.BackgroundImage")));
-            this.waitControl1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.waitControl1.Location = new System.Drawing.Point(0, 210);
-            this.waitControl1.Name = "waitControl1";
-            this.waitControl1.ShowTitle = true;
-            this.waitControl1.Size = new System.Drawing.Size(160, 160);
-            this.waitControl1.TabIndex = 49;
-            // 
-            // operateLog1
-            // 
-            this.operateLog1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.operateLog1.BackColor = System.Drawing.Color.Transparent;
-            this.operateLog1.IsLog = true;
-            this.operateLog1.Location = new System.Drawing.Point(3, 663);
-            this.operateLog1.Name = "operateLog1";
-            this.operateLog1.Size = new System.Drawing.Size(154, 88);
-            this.operateLog1.TabIndex = 10;
-            // 
-            // cRight
-            // 
-            this.cRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.cRight.BackgroundImage = global::DispatchPlatform.Properties.Resources.MainDispatchBackground;
-            this.cRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cRight.Checked = false;
-            this.cRight.ControlEnable = true;
-            this.cRight.DepartmentID = 0;
-            this.cRight.DepartmentName = null;
-            this.cRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.cRight.FapIP = null;
-            this.cRight.ForeColor = System.Drawing.Color.Navy;
-            this.cRight.ID = 0;
-            this.cRight.IsAlarm = false;
-            this.cRight.IsCalling = false;
-            this.cRight.IsDispatch = true;
-            this.cRight.IsMeeting = false;
-            this.cRight.IsOnline = 1;
-            this.cRight.Location = new System.Drawing.Point(823, 0);
-            this.cRight.MemberLevel = 0;
-            this.cRight.MemberName = "cRight";
-            this.cRight.Name = "cRight";
-            this.cRight.NameColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
-            this.cRight.Number = ((long)(0));
-            this.cRight.NumberState = "空闲";
-            this.cRight.Padding = new System.Windows.Forms.Padding(1);
-            this.cRight.PeerNumber = "0";
-            this.cRight.PeerNumberColor = System.Drawing.Color.Black;
-            this.cRight.Size = new System.Drawing.Size(230, 105);
-            this.cRight.TabIndex = 47;
-            this.cRight.TellType = CommControl.PublicEnums.EnumTelType.调度席话机;
-            this.cRight.UserLineStatus = DispatchPlatform.TalkControl.EnumUserLineStatus.Idle;
-            this.cRight.UserRecordStatus = DispatchPlatform.TalkControl.EnumRecordStatus.OFF;
-            this.cRight.Click += new System.EventHandler(this.cRight_Click);
-            // 
-            // cLeft
-            // 
-            this.cLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
-            this.cLeft.BackgroundImage = global::DispatchPlatform.Properties.Resources.MainDispatchBackground;
-            this.cLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.cLeft.Checked = false;
-            this.cLeft.ControlEnable = true;
-            this.cLeft.DepartmentID = 0;
-            this.cLeft.DepartmentName = null;
-            this.cLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.cLeft.FapIP = null;
-            this.cLeft.ForeColor = System.Drawing.Color.Navy;
-            this.cLeft.ID = 0;
-            this.cLeft.IsAlarm = false;
-            this.cLeft.IsCalling = false;
-            this.cLeft.IsDispatch = false;
-            this.cLeft.IsMeeting = false;
-            this.cLeft.IsOnline = 1;
-            this.cLeft.Location = new System.Drawing.Point(0, 0);
-            this.cLeft.MemberLevel = 0;
-            this.cLeft.MemberName = "cLeft";
-            this.cLeft.Name = "cLeft";
-            this.cLeft.NameColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
-            this.cLeft.Number = ((long)(0));
-            this.cLeft.NumberState = "空闲";
-            this.cLeft.Padding = new System.Windows.Forms.Padding(1);
-            this.cLeft.PeerNumber = "0";
-            this.cLeft.PeerNumberColor = System.Drawing.Color.Black;
-            this.cLeft.Size = new System.Drawing.Size(230, 105);
-            this.cLeft.TabIndex = 0;
-            this.cLeft.TellType = CommControl.PublicEnums.EnumTelType.调度席话机;
-            this.cLeft.UserLineStatus = DispatchPlatform.TalkControl.EnumUserLineStatus.Idle;
-            this.cLeft.UserRecordStatus = DispatchPlatform.TalkControl.EnumRecordStatus.OFF;
-            this.cLeft.Click += new System.EventHandler(this.cLeft_Click);
-            // 
-            // smallTimeControl2
-            // 
-            this.smallTimeControl2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.smallTimeControl2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("smallTimeControl2.BackgroundImage")));
-            this.smallTimeControl2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.smallTimeControl2.Location = new System.Drawing.Point(303, 2);
-            this.smallTimeControl2.Name = "smallTimeControl2";
-            this.smallTimeControl2.Size = new System.Drawing.Size(190, 46);
-            this.smallTimeControl2.TabIndex = 0;
+            this.btnRegionView.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRegionView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegionView.AutoCheckOnClick = true;
+            this.btnRegionView.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btnRegionView.HoverImage = global::DispatchPlatform.Properties.Resources.MeetingNorml;
+            this.btnRegionView.Image = global::DispatchPlatform.Properties.Resources.MeetingNorml;
+            this.btnRegionView.Location = new System.Drawing.Point(-1, 548);
+            this.btnRegionView.Name = "btnRegionView";
+            this.btnRegionView.PressedImage = global::DispatchPlatform.Properties.Resources.MeetingSelect;
+            this.btnRegionView.Size = new System.Drawing.Size(160, 110);
+            this.btnRegionView.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnRegionView.TabIndex = 53;
+            this.btnRegionView.Click += new System.EventHandler(this.btnRegionView_Click);
             // 
             // FormMain
             // 
@@ -1391,11 +1407,11 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlMain)).EndInit();
             this.superTabControlMain.ResumeLayout(false);
-            this.superTabControlPanel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.superTabControlMeeting)).EndInit();
             this.superTabControlPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlDispatch)).EndInit();
             this.superTabControlDispatch.ResumeLayout(false);
+            this.superTabControlPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.superTabControlMeeting)).EndInit();
             this.panelAll.ResumeLayout(false);
             this.panelMain.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
@@ -1504,6 +1520,7 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem9;
         private Control.SmallTimeControl smallTimeControl2;
         public DevComponents.DotNetBar.ButtonX imgBtnBroadcast;
+        public DevComponents.DotNetBar.ButtonX btnRegionView;
     }
 }
 

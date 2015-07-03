@@ -20,9 +20,6 @@ namespace DispatchPlatform
     public partial class FormMain : Form
     {
         #region 变量
-        private HTPhoneSDK.HTphoneRegistrationStateChangedCb registerCallBack;
-        private HTPhoneSDK.HTphoneCallStateChangedCb callStateCallBack;
-        private FormPop _popVideoForm = new FormPop();
 
         /// <summary>是否为第一次连接不上</summary>
         private bool _isBreakNet = false;
@@ -474,7 +471,7 @@ namespace DispatchPlatform
                         _baseCommand.Begin();
                     }
                     break;
-               
+
                 default:
                     break;
             }
@@ -2017,17 +2014,6 @@ namespace DispatchPlatform
                 if (e.UserLineStatus == TalkControl.EnumUserLineStatus.Idle)
                 {
                     Pub.DeleteMemberState(e.UserNumber);
-                    try
-                    {
-                        if (e.UserNumber == Convert.ToInt32(panelVideoBox.Tag))
-                        {
-                            lblVideoNumber.Text = "";//清除号码信息
-                            panelVideoBox.Visible = false;
-                        }
-                    }
-                    catch (Exception)
-                    {
-                    }
                 }
 
                 //将当前号码属于那个基站记录在号码表中
@@ -2523,99 +2509,6 @@ namespace DispatchPlatform
         }
         #endregion
 
-        #region 视频事件
-        void HTphoneRegistrationStateChangedCb(HTPhoneSDK.HTphoneRegistrationState cstate, string message)
-        {
-            this.Invoke(new EventHandler(delegate(object o, EventArgs ee)
-            {
-                //lblRegisterState.Text = cstate.ToString();
-                switch (cstate)
-                {
-                    case HTPhoneSDK.HTphoneRegistrationState.HTphoneRegistrationNone:
-                        //bc_OnMsg(string.Format("{0}呼叫{1}成功", Pub.GetDispatchNameByNumber(e.FromNumber), e.ToNumber));
-                        break;
-                    case HTPhoneSDK.HTphoneRegistrationState.HTphoneRegistrationProgress:
-                        bc_OnMsg("视频号码注册中");
-                        break;
-                    case HTPhoneSDK.HTphoneRegistrationState.HTphoneRegistrationOk:
-                        bc_OnMsg("视频号码注册成功");
-                        break;
-                    case HTPhoneSDK.HTphoneRegistrationState.HTphoneRegistrationCleared:
-                        break;
-                    case HTPhoneSDK.HTphoneRegistrationState.HTphoneRegistrationFailed:
-                        bc_OnMsg("视频号码注册失败");
-                        break;
-                    default:
-                        break;
-                }
-
-            }));
-
-        }
-
-        void HTphoneCallStateChangedCb(HTPhoneSDK.HTphoneCallState cstate, string from, string message)
-        {
-            _fromNumberForVideo = from;
-            this.Invoke(new EventHandler(delegate(object o, EventArgs ee)
-            {
-                switch (cstate)
-                {
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallIdle:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallIncomingReceived:
-                        // int i = HTPhoneSDK.htphone_accept_call();
-                        if (MessageBoxEx.Show(string.Format("{0}来电，是否接听？", _fromNumberForVideo), "来电通知", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                        {
-                            int i = HTPhoneSDK.htphone_accept_call();
-
-                        }
-                        else
-                        {
-                            int j = HTPhoneSDK.htphone_reject_call();
-                        }
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallOutgoingInit:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallOutgoingProgress:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallOutgoingRinging:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallOutgoingEarlyMedia:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallStreamsRunning:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallPausing:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallPaused:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallResuming:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallRefered:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallError:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallEnd:
-                        panelVideoBox.Visible = false;
-                        _popVideoForm.Hide();
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallPausedByRemote:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallUpdatedByRemote:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallIncomingEarlyMedia:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallUpdating:
-                        break;
-                    case HTPhoneSDK.HTphoneCallState.HTphoneCallReleased:
-                        break;
-                    default:
-                        break;
-                }
-
-            }));
-
-        }
-        #endregion
         #endregion
 
         #region 公共方法
@@ -3026,11 +2919,6 @@ namespace DispatchPlatform
         }
         #endregion
 
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void btnVideoSize_Click(object sender, EventArgs e)
         {
             Point p = btnVideoSize.Location;
@@ -3071,9 +2959,15 @@ namespace DispatchPlatform
             _popMenuVideShow = false;
         }
 
-  
-   
+        /// <summary>
+        /// 区域展示
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRegionView_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 
     /// <summary>

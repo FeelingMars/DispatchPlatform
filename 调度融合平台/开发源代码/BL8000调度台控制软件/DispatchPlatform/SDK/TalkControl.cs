@@ -106,23 +106,23 @@ namespace DispatchPlatform
             None=-1,
             /// <summary>当前用户空闲</summary>
             Idle = 0,
-            /// <summary>//忙</summary>
+            /// <summary>忙</summary>
             Busy = 1,
             /// <summary>振铃</summary>
             Ring = 2,
             /// <summary>寻呼</summary>
             Paging = 3,
-            /// <summary>//关机</summary>
+            /// <summary>关机</summary>
             Poweroff = 4,
-            /// <summary>//正在向外打电话</summary>
+            /// <summary>正在向外打电话</summary>
             Outcalling = 5,
-            /// <summary>//保持通话</summary>
+            /// <summary>保持通话</summary>
             Holding = 6,
-            /// <summary>//正在等待队列中</summary>
+            /// <summary>正在等待队列中</summary>
             Blocked = 7,
-            /// <summary>//不在线</summary>
+            /// <summary>不在线</summary>
             Offline = 8,
-            /// <summary>// 在线 </summary>
+            /// <summary> 在线 </summary>
             Online = 9,
             /// <summary>
             /// 强插程序显示用，与Mbox内部无关
