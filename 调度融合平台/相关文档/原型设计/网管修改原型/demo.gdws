@@ -1,0 +1,14 @@
+<Workspace
+	CID = "1"
+	NextCID = "2"
+	IconCategory = "Documents">
+	<OpenFiles
+		CID = "1"
+		LastActive = "1">
+		<File
+			FileID = "2EBA6342-A6B3-4788-A67A505FBECCD3B9"
+			RootPath = "$Container"
+			RelativePathname = "aaa.gui"
+			ViewSettings = ""/>
+	</OpenFiles>
+</Workspace>

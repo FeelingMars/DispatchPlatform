@@ -1,0 +1,670 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D4B0BF57-9759-4692-9542-3BE5192346BA}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DispatchPlatform</RootNamespace>
+    <AssemblyName>DispatchPlatform</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>DispatchPlatform.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BW_FormBase">
+      <HintPath>..\..\Lib\BW_FormBase.dll</HintPath>
+    </Reference>
+    <Reference Include="BW_InputPromptDialog">
+      <HintPath>..\..\Lib\BW_InputPromptDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="BW_OleDbHelper">
+      <HintPath>..\..\Lib\BW_OleDbHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="BW_ProgressBarDialog, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Lib\BW_ProgressBarDialog.dll</HintPath>
+    </Reference>
+    <Reference Include="BW_Socket">
+      <HintPath>..\..\Lib\BW_Socket.dll</HintPath>
+    </Reference>
+    <Reference Include="BW_XMLHelper">
+      <HintPath>..\..\Lib\BW_XMLHelper.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar.Design">
+      <HintPath>..\..\Lib\DevComponents.DotNetBar.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.DotNetBar2">
+      <HintPath>..\..\Lib\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="IPBroadcastDLL">
+      <HintPath>..\..\Lib\IPBroadcastDLL.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\IP对讲测试代码\IpBrocastTest\dll\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\IP对讲测试代码\IpBrocastTest\dll\Microsoft.DirectX.DirectSound.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Command\BaseCommand.cs" />
+    <Compile Include="Command\DispatchLogBLL.cs" />
+    <Compile Include="Command\MeetingCommand\AddMeetingMemberCommand.cs" />
+    <Compile Include="Command\MeetingCommand\DeleteMeetingMemberCommand.cs" />
+    <Compile Include="Command\MeetingCommand\NoSpeekMeetingMemberCommand.cs" />
+    <Compile Include="Command\MeetingCommand\OkSpeekMeetingMemberCommand.cs" />
+    <Compile Include="Command\MeetingCommand\IsolateMeetingMemberCommand.cs" />
+    <Compile Include="Command\MeetingCommand\UnIsolateMeetingMemberCommand.cs" />
+    <Compile Include="Command\MeetingCommand\EndMeetingCommand.cs" />
+    <Compile Include="Command\NormalCommand\MakeCallCommand.cs" />
+    <Compile Include="Command\NormalCommand\HandupCommand.cs" />
+    <Compile Include="Command\NormalCommand\InsertCommand.cs" />
+    <Compile Include="Command\MeetingCommand\MakeMeetingCommand.cs" />
+    <Compile Include="Command\NormalCommand\InsteadAnswerCommand.cs" />
+    <Compile Include="Command\NormalCommand\KeepCommand.cs" />
+    <Compile Include="Command\NormalCommand\SelectAnswerCommand.cs" />
+    <Compile Include="Command\NormalCommand\TransferCommand.cs" />
+    <Compile Include="Command\NormalCommand\SnatchCommand.cs" />
+    <Compile Include="Command\NormalCommand\ListenCommand.cs" />
+    <Compile Include="Command\NormalCommand\BeginRecordCommand.cs" />
+    <Compile Include="Command\NormalCommand\EndRecordCommand.cs" />
+    <Compile Include="Command\NormalCommand\SelectLemcAnswerCommand.cs" />
+    <Compile Include="Command\NormalCommand\GroupCallCommand.cs" />
+    <Compile Include="Control\DispatchCommandBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DispatchCommandBar.Designer.cs">
+      <DependentUpon>DispatchCommandBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LemcMemberControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\LemcMemberControl.Designer.cs">
+      <DependentUpon>LemcMemberControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MeetingCommandBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MeetingCommandBar.Designer.cs">
+      <DependentUpon>MeetingCommandBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\OperateLog.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\OperateLog.Designer.cs">
+      <DependentUpon>OperateLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PageControl.designer.cs">
+      <DependentUpon>PageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PreNextPageControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PreNextPageControl.Designer.cs">
+      <DependentUpon>PreNextPageControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\TimeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\TimeControl.Designer.cs">
+      <DependentUpon>TimeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\WaitControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\WaitControl.Designer.cs">
+      <DependentUpon>WaitControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SmallTimeControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SmallTimeControl.Designer.cs">
+      <DependentUpon>SmallTimeControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCallKeyborad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCallKeyborad.Designer.cs">
+      <DependentUpon>FormCallKeyborad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKeyboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKeyboard.designer.cs">
+      <DependentUpon>FormKeyboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLemcWait.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLemcWait.Designer.cs">
+      <DependentUpon>FormLemcWait.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMainIPBrocast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPop.designer.cs">
+      <DependentUpon>FormPop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectBox.Designer.cs">
+      <DependentUpon>FormSelectBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDatabaseConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDatabaseConfig.designer.cs">
+      <DependentUpon>frmDatabaseConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Config.cs" />
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pub.cs" />
+    <Compile Include="MeetingManage.cs" />
+    <Compile Include="MemberManage.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Control\SingleUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SingleUserControl.Designer.cs">
+      <DependentUpon>SingleUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SDK\HTPhoneSDK.cs" />
+    <Compile Include="SDK\TalkControl.cs" />
+    <Compile Include="FormWelcome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWelcome.Designer.cs">
+      <DependentUpon>FormWelcome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectMeetingMember.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectMeetingMember.Designer.cs">
+      <DependentUpon>FormSelectMeetingMember.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TalkLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TalkLog.Designer.cs">
+      <DependentUpon>TalkLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\CheckDBOnlineThread.cs" />
+    <Compile Include="FormConfirmBroadCast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfirmBroadCast.designer.cs">
+      <DependentUpon>FormConfirmBroadCast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormBroadCasting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBroadCasting.designer.cs">
+      <DependentUpon>FormBroadCasting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Control\DispatchCommandBar.resx">
+      <DependentUpon>DispatchCommandBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\LemcMemberControl.resx">
+      <DependentUpon>LemcMemberControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MeetingCommandBar.resx">
+      <DependentUpon>MeetingCommandBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\OperateLog.resx">
+      <DependentUpon>OperateLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\PageControl.resx">
+      <DependentUpon>PageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\PreNextPageControl.resx">
+      <DependentUpon>PreNextPageControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TimeControl.resx">
+      <DependentUpon>TimeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\WaitControl.resx">
+      <DependentUpon>WaitControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SmallTimeControl.resx">
+      <DependentUpon>SmallTimeControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCallKeyborad.resx">
+      <DependentUpon>FormCallKeyborad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKeyboard.resx">
+      <DependentUpon>FormKeyboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLemcWait.resx">
+      <DependentUpon>FormLemcWait.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPop.resx">
+      <DependentUpon>FormPop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectBox.resx">
+      <DependentUpon>FormSelectBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDatabaseConfig.resx">
+      <DependentUpon>frmDatabaseConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Control\SingleUserControl.resx">
+      <DependentUpon>SingleUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormWelcome.resx">
+      <DependentUpon>FormWelcome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectMeetingMember.resx">
+      <DependentUpon>FormSelectMeetingMember.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TalkLog.resx">
+      <DependentUpon>TalkLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfirmBroadCast.resx">
+      <DependentUpon>FormConfirmBroadCast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBroadCasting.resx">
+      <DependentUpon>FormBroadCasting.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\BL8000SDK\MBoxSDK.csproj">
+      <Project>{368B2DF9-7FDF-4920-8AA1-7B25491C5288}</Project>
+      <Name>MBoxSDK</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CommControl\CommControl.csproj">
+      <Project>{A1BEAB33-7EA0-46FB-ADF3-D604288457F9}</Project>
+      <Name>CommControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DB_Talk\DB_Talk.csproj">
+      <Project>{CBBEC7B5-7154-4F3E-A657-1BB0F9848E68}</Project>
+      <Name>DB_Talk</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\style.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\max.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowRight.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ArrowLeft.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MemberSelect.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ServerState.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ExitIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LockIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnExit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btnLock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\NormalWait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LemcWait.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\page_login_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MeetingMemberRing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MeetingMemberOnline.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MeetingMemberOffLine.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MeetingMemberBusy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MainBackGround.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DispatchPlatform.ico" />
+    <None Include="Resources\Waiting.jpg" />
+    <None Include="Resources\BigIconSet.png" />
+    <None Include="Resources\BoxOffline.png" />
+    <None Include="Resources\BoxOnline.png" />
+    <None Include="Resources\cb_tran_On.jpg" />
+    <None Include="Resources\cb_tran_Normal.jpg" />
+    <None Include="Resources\cb_call_Normal.jpg" />
+    <None Include="Resources\cb_call_on.jpg" />
+    <None Include="Resources\cb_handup_on.jpg" />
+    <None Include="Resources\cb_handup_Normal.jpg" />
+    <None Include="Resources\cb_0_on.jpg" />
+    <None Include="Resources\cb_jing_normal.jpg" />
+    <None Include="Resources\cb_jing_on.jpg" />
+    <None Include="Resources\cb_xing_normal.jpg" />
+    <None Include="Resources\cb_xing_on.jpg" />
+    <None Include="Resources\cb_0_normal.jpg" />
+    <None Include="Resources\cb_8_normal.jpg" />
+    <None Include="Resources\cb_8_on.jpg" />
+    <None Include="Resources\cb_9_normal.jpg" />
+    <None Include="Resources\cb_9_on.jpg" />
+    <None Include="Resources\cb_7_normal.jpg" />
+    <None Include="Resources\cb_7_on.jpg" />
+    <None Include="Resources\cb_1_normal.jpg" />
+    <None Include="Resources\cb_1_on.jpg" />
+    <None Include="Resources\cb_2_normal.jpg" />
+    <None Include="Resources\cb_2_on.jpg" />
+    <None Include="Resources\cb_3_normal.jpg" />
+    <None Include="Resources\cb_3_on.jpg" />
+    <None Include="Resources\cb_4_normal.jpg" />
+    <None Include="Resources\cb_4_on.jpg" />
+    <None Include="Resources\cb_5_normal.jpg" />
+    <None Include="Resources\cb_5_on.jpg" />
+    <None Include="Resources\cb_6_normal.jpg" />
+    <None Include="Resources\cb_6_on.jpg" />
+    <None Include="Resources\CallKeyborad.png" />
+    <None Include="Resources\cb_clear_on.jpg" />
+    <None Include="Resources\cb_Close_normal.jpg" />
+    <None Include="Resources\cb_close_on.jpg" />
+    <None Include="Resources\cb_Clear_normal.jpg" />
+    <None Include="Resources\WaitIco.png" />
+    <None Include="Resources\WaitSplit.jpg" />
+    <None Include="Resources\page_login_2.jpg" />
+    <None Include="Resources\KeybordSlect.jpg" />
+    <None Include="Resources\KeybordNormal.jpg" />
+    <None Include="Resources\osk_y.jpg" />
+    <None Include="Resources\osk_z.jpg" />
+    <None Include="Resources\osk_-.jpg" />
+    <None Include="Resources\osk_unline.jpg" />
+    <None Include="Resources\osk_0.jpg" />
+    <None Include="Resources\osk_1.jpg" />
+    <None Include="Resources\osk_2.jpg" />
+    <None Include="Resources\osk_3.jpg" />
+    <None Include="Resources\osk_4.jpg" />
+    <None Include="Resources\osk_5.jpg" />
+    <None Include="Resources\osk_6.jpg" />
+    <None Include="Resources\osk_7.jpg" />
+    <None Include="Resources\osk_8.jpg" />
+    <None Include="Resources\osk_9.jpg" />
+    <None Include="Resources\osk_a.jpg" />
+    <None Include="Resources\osk_b.jpg" />
+    <None Include="Resources\osk_c.jpg" />
+    <None Include="Resources\osk_d.jpg" />
+    <None Include="Resources\osk_dian.jpg" />
+    <None Include="Resources\osk_e.jpg" />
+    <None Include="Resources\osk_f.jpg" />
+    <None Include="Resources\osk_g.jpg" />
+    <None Include="Resources\osk_h.jpg" />
+    <None Include="Resources\osk_i.jpg" />
+    <None Include="Resources\osk_j.jpg" />
+    <None Include="Resources\osk_k.jpg" />
+    <None Include="Resources\osk_l.jpg" />
+    <None Include="Resources\osk_m.jpg" />
+    <None Include="Resources\osk_n.jpg" />
+    <None Include="Resources\osk_o.jpg" />
+    <None Include="Resources\osk_OK.jpg" />
+    <None Include="Resources\osk_p.jpg" />
+    <None Include="Resources\osk_q.jpg" />
+    <None Include="Resources\osk_r.jpg" />
+    <None Include="Resources\osk_s.jpg" />
+    <None Include="Resources\osk_t.jpg" />
+    <None Include="Resources\osk_u.jpg" />
+    <None Include="Resources\osk_v.jpg" />
+    <None Include="Resources\osk_w.jpg" />
+    <None Include="Resources\osk_x.jpg" />
+    <None Include="Resources\osk_xiegang1.jpg" />
+    <None Include="Resources\osk_xiegang2.jpg" />
+    <None Include="Resources\osk_xinghao.jpg" />
+    <None Include="Resources\osk_di.png" />
+    <None Include="Resources\osk_delete.jpg" />
+    <None Include="Resources\beijing.jpg" />
+    <None Include="Resources\TimeControlBackground.png" />
+    <None Include="Resources\DispatchNorml.jpg" />
+    <None Include="Resources\MeetingNormlSelect.jpg" />
+    <None Include="Resources\MeetingNorml.jpg" />
+    <None Include="Resources\TimeControlBackground.jpg" />
+    <None Include="Resources\WaitItemBackGound.jpg" />
+    <None Include="Resources\MainContentBackGround.jpg" />
+    <None Include="Resources\set.png" />
+    <None Include="Resources\selected.png" />
+    <None Include="Resources\KeybordICO.png" />
+    <None Include="Resources\MemberBackgound.jpg" />
+    <None Include="Resources\MemberSelect .jpg" />
+    <None Include="Resources\MainDispatchBackground.jpg" />
+    <None Include="Resources\LemcBackground.png" />
+    <None Include="Resources\LemcButtonBackground.png" />
+    <None Include="Resources\n_Insert.png.png" />
+    <None Include="Resources\Keyboradl.png" />
+    <None Include="Resources\Flower.png" />
+    <None Include="Resources\RecordIco.png" />
+    <None Include="Resources\KeepIco.png" />
+    <None Include="Resources\ListenIco.png" />
+    <None Include="Resources\MemberSlect .jpg" />
+    <None Include="Resources\Cencel.jpg" />
+    <None Include="Resources\OK.jpg" />
+    <None Include="Resources\SelectMeetingMemberBackground.png" />
+    <None Include="Resources\telephone_m_Ring.png" />
+    <None Include="Resources\telephone_MeetingMemberIsolate.png" />
+    <None Include="Resources\telephone_MeetingMemberNoSpeek.png" />
+    <None Include="Resources\telephone_n_Busy.png" />
+    <None Include="Resources\telephone_n_Insert.png" />
+    <None Include="Resources\telephone_n_Keep.png" />
+    <None Include="Resources\telephone_n_Listen.png" />
+    <None Include="Resources\telephone_n_OffLine.png" />
+    <None Include="Resources\telephone_n_OnLine.png" />
+    <None Include="Resources\telephone_n_Record.png" />
+    <None Include="Resources\m_Ring.png" />
+    <None Include="Resources\MeetingMemberIsolate.png" />
+    <None Include="Resources\MeetingMemberNoSpeek.png" />
+    <None Include="Resources\n_Busy.png" />
+    <None Include="Resources\n_Insert.png" />
+    <None Include="Resources\n_Keep.png" />
+    <None Include="Resources\n_Listen.png" />
+    <None Include="Resources\n_OffLine.png" />
+    <None Include="Resources\n_OnLine.png" />
+    <None Include="Resources\n_Record.png" />
+    <None Include="Resources\D_Busy.png" />
+    <None Include="Resources\D_Hookon.png" />
+    <None Include="Resources\D_Keep.png" />
+    <None Include="Resources\D_Offline.png" />
+    <None Include="Resources\D_Online.png" />
+    <None Include="Resources\D_Ring.png" />
+    <None Include="Resources\D_Record.png" />
+    <None Include="Resources\BottomDBOnLine.png" />
+    <None Include="Resources\BottomBoxOffLine.png" />
+    <None Include="Resources\BottomBoxOnLIne.png" />
+    <None Include="Resources\BottomDBOffLine.png" />
+    <None Include="Resources\TalkLogIco.png" />
+    <None Include="Resources\TalkLogBackground.png" />
+    <None Include="Resources\D_Listen.png" />
+    <None Include="Resources\ButtonNormal.jpg" />
+    <None Include="Resources\ButtonSelect.jpg" />
+    <None Include="Resources\DispatchSelect.jpg" />
+    <None Include="Resources\MeetingSelect.jpg" />
+    <None Include="Resources\TopBackGround.jpg" />
+    <None Include="Resources\TopSplit.jpg" />
+    <None Include="Resources\BottomBackground.jpg" />
+    <None Include="Resources\CommandBackGround.jpg" />
+    <None Include="Resources\page_login_Exit.jpg" />
+    <None Include="Resources\TellLogUpNormal.png" />
+    <None Include="Resources\TellLogDownNormal.png" />
+    <None Include="Resources\TellLogUpDwon.png" />
+    <None Include="Resources\TellLogRefreshNormal.png" />
+    <None Include="Resources\TellLogDownDown.png" />
+    <None Include="Resources\TellLogRefreshDown.png" />
+    <None Include="Resources\TellLogDownDown.jpg" />
+    <None Include="Resources\TellLogDownNormal.jpg" />
+    <None Include="Resources\TellLogRefreshDown.jpg" />
+    <None Include="Resources\TellLogRefreshNormal.jpg" />
+    <None Include="Resources\TellLogUpDwon.jpg" />
+    <None Include="Resources\TellLogUpNormal.jpg" />
+    <None Include="Resources\icoGroupCall.png" />
+    <None Include="Resources\ButtonBack.jpg" />
+    <None Include="Resources\smallBack.jpg" />
+    <None Include="Resources\SmallTimeControlBackground.png" />
+    <None Include="Resources\b_MeetingMemberIsolate.png" />
+    <None Include="Resources\b_MeetingMemberNoSpeek.png" />
+    <None Include="Resources\b_m_Ring.png" />
+    <None Include="Resources\b_n_Busy.png" />
+    <None Include="Resources\b_n_Insert.png" />
+    <None Include="Resources\b_n_Keep.png" />
+    <None Include="Resources\b_n_Listen.png" />
+    <None Include="Resources\b_n_OffLine.png" />
+    <None Include="Resources\b_n_OnLine.png" />
+    <None Include="Resources\b_n_Record.png" />
+    <None Include="Resources\ConfirmBroadcastBack.png" />
+    <None Include="Resources\BroadcastingBack.png" />
+    <None Include="Resources\BroadcastNorml.jpg" />
+    <None Include="Resources\BroadcastSelect.jpg" />
+    <Content Include="tubiao.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="MediaPlayer">
+      <Guid>{22D6F304-B0F6-11D0-94AB-0080C74C7E95}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
