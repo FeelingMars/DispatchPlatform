@@ -2966,7 +2966,9 @@ namespace DispatchPlatform
         /// <param name="e"></param>
         private void btnRegionView_Click(object sender, EventArgs e)
         {
-
+            FromRegionView regionView = new FromRegionView();
+            regionView.WindowState = FormWindowState.Maximized;
+            regionView.ShowDialog();
         }
     }
 

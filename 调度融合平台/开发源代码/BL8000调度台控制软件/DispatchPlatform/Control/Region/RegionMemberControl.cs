@@ -15,7 +15,7 @@ namespace DispatchPlatform.Control
     [DefaultEvent("Click")]
     internal partial class RegionMemberControl<T> : UserControl where T : RegionMemberInfo
     {
-        public T Tag { get; set; }
+        public new T Tag { get; set; }
 
         #region 常量
         /// <summary>正常显示的用户姓名颜色</summary>
@@ -760,5 +760,6 @@ namespace DispatchPlatform.Control
             return false;
         }
         #endregion
+
     }
 }

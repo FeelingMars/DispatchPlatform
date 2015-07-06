@@ -62,6 +62,7 @@
             this.panelAll = new System.Windows.Forms.Panel();
             this.panelMain = new System.Windows.Forms.Panel();
             this.panelRight = new System.Windows.Forms.Panel();
+            this.btnRegionView = new DevComponents.DotNetBar.ButtonX();
             this.waitControl1 = new DispatchPlatform.Control.WaitControl();
             this.imgBtnBroadcast = new DevComponents.DotNetBar.ButtonX();
             this.imgBtnMeeting = new DevComponents.DotNetBar.ButtonX();
@@ -136,7 +137,6 @@
             this.btnExit = new DevComponents.DotNetBar.ButtonX();
             this.btnLock = new DevComponents.DotNetBar.ButtonX();
             this.lblTitle = new DevComponents.DotNetBar.LabelX();
-            this.btnRegionView = new DevComponents.DotNetBar.ButtonX();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlMain)).BeginInit();
             this.superTabControlMain.SuspendLayout();
             this.superTabControlPanel1.SuspendLayout();
@@ -398,6 +398,22 @@
             this.panelRight.Name = "panelRight";
             this.panelRight.Size = new System.Drawing.Size(160, 757);
             this.panelRight.TabIndex = 51;
+            // 
+            // btnRegionView
+            // 
+            this.btnRegionView.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.btnRegionView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegionView.AutoCheckOnClick = true;
+            this.btnRegionView.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.btnRegionView.HoverImage = global::DispatchPlatform.Properties.Resources.MeetingNorml;
+            this.btnRegionView.Image = global::DispatchPlatform.Properties.Resources.MeetingNorml;
+            this.btnRegionView.Location = new System.Drawing.Point(-1, 548);
+            this.btnRegionView.Name = "btnRegionView";
+            this.btnRegionView.PressedImage = global::DispatchPlatform.Properties.Resources.MeetingSelect;
+            this.btnRegionView.Size = new System.Drawing.Size(160, 110);
+            this.btnRegionView.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.btnRegionView.TabIndex = 53;
+            this.btnRegionView.Click += new System.EventHandler(this.btnRegionView_Click);
             // 
             // waitControl1
             // 
@@ -1374,22 +1390,6 @@
             this.lblTitle.Style = DevComponents.DotNetBar.eDotNetBarStyle.VS2005;
             this.lblTitle.TabIndex = 54;
             this.lblTitle.Text = "语音调度系统";
-            // 
-            // btnRegionView
-            // 
-            this.btnRegionView.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnRegionView.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRegionView.AutoCheckOnClick = true;
-            this.btnRegionView.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.btnRegionView.HoverImage = global::DispatchPlatform.Properties.Resources.MeetingNorml;
-            this.btnRegionView.Image = global::DispatchPlatform.Properties.Resources.MeetingNorml;
-            this.btnRegionView.Location = new System.Drawing.Point(-1, 548);
-            this.btnRegionView.Name = "btnRegionView";
-            this.btnRegionView.PressedImage = global::DispatchPlatform.Properties.Resources.MeetingSelect;
-            this.btnRegionView.Size = new System.Drawing.Size(160, 110);
-            this.btnRegionView.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnRegionView.TabIndex = 53;
-            this.btnRegionView.Click += new System.EventHandler(this.btnRegionView_Click);
             // 
             // FormMain
             // 
