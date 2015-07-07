@@ -12,28 +12,40 @@ namespace CommControl
         /// </summary>
         public enum EnumGroupType
         {
-            none=0,
-            Normal=1,
+            none = 0,
+            Normal = 1,
             /// <summary>
             ///  会议
             /// </summary>
-            Meeting=2,
+            Meeting = 2,
             /// <summary>
             /// 短信
             /// </summary>
-            SMS=3,
+            SMS = 3,
             /// <summary>
             /// 摄像机
             /// </summary>
-            Camera=4
+            Camera = 4,
+            /// <summary>
+            /// 手机
+            /// </summary>
+            WifiPhone = 5,
+            /// <summary>
+            /// 固话
+            /// </summary>
+            TelPhone = 6,
+            /// <summary>
+            /// 广播
+            /// </summary>
+            Redio = 7
         }
 
         public enum EnumLevel
         {
             none,
-            一级=1,
-            二级=2,
-            三级=3,
+            一级 = 1,
+            二级 = 2,
+            三级 = 3,
             四级 = 4,
             五级 = 5,
             六级 = 6,
@@ -42,9 +54,9 @@ namespace CommControl
         }
 
         //用户权限
-        public enum EnumAuthority  
+        public enum EnumAuthority
         {
-            none=-1,
+            none = -1,
             国际长途 = 0,
             国内长途 = 1,
             市话 = 2,
@@ -61,7 +73,7 @@ namespace CommControl
             //二期网管
             手机Wifi = 4,  //sip
             手机3G = 6,   //3G
-            固话=4         //sip
+            固话 = 4         //sip
         }
 
         /// <summary>
@@ -78,8 +90,8 @@ namespace CommControl
             G3G手机 = 2,
             固话 = 3,
             调度席话机 = 4,
-            广播=5,
-            外部电话=6
+            广播 = 5,
+            外部电话 = 6
         }
 
         /// <summary>
@@ -88,7 +100,7 @@ namespace CommControl
         public enum EnumTelPasswordType
         {
             固定 = 1,
-            增加 = 2,
+            增加 = 2
         }
 
         /// <summary>正常调度命令</summary>
@@ -183,11 +195,11 @@ namespace CommControl
             SelectLemcAnser = 21,
 
             /// <summary>录音操作</summary>
-            RecordOperate=22,
+            RecordOperate = 22,
             /// <summary>
             /// 组呼
             /// </summary>
-            GroupCall=23,
+            GroupCall = 23,
 
             /// <summary>
             /// 视频呼叫
@@ -203,6 +215,17 @@ namespace CommControl
         {
             Normal,//正常
             Lemc//紧急
+        }
+
+        /// <summary>
+        /// 区域成员类型
+        /// </summary>
+        public enum EnumRegionMemberType
+        {
+            WiFiPhone = 1,
+            TelPhone = 3,
+            Radio = 5,
+            Camera = 7,
         }
     }
 }

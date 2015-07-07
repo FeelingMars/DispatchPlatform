@@ -70,7 +70,6 @@
             // btnIndex5
             // 
             this.btnIndex5.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnIndex5.AutoCheckOnClick = true;
             this.btnIndex5.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btnIndex5.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnIndex5.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold);
@@ -82,11 +81,11 @@
             this.btnIndex5.TabIndex = 7;
             this.btnIndex5.Text = "5";
             this.btnIndex5.CheckedChanged += new System.EventHandler(this.btnCommon_CheckedChanged);
+            this.btnIndex5.Click += new System.EventHandler(this.btnCommon_Click);
             // 
             // btnIndex4
             // 
             this.btnIndex4.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnIndex4.AutoCheckOnClick = true;
             this.btnIndex4.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btnIndex4.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnIndex4.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold);
@@ -98,11 +97,11 @@
             this.btnIndex4.TabIndex = 8;
             this.btnIndex4.Text = "4";
             this.btnIndex4.CheckedChanged += new System.EventHandler(this.btnCommon_CheckedChanged);
+            this.btnIndex4.Click += new System.EventHandler(this.btnCommon_Click);
             // 
             // btnIndex3
             // 
             this.btnIndex3.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnIndex3.AutoCheckOnClick = true;
             this.btnIndex3.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btnIndex3.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnIndex3.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold);
@@ -114,11 +113,11 @@
             this.btnIndex3.TabIndex = 9;
             this.btnIndex3.Text = "3";
             this.btnIndex3.CheckedChanged += new System.EventHandler(this.btnCommon_CheckedChanged);
+            this.btnIndex3.Click += new System.EventHandler(this.btnCommon_Click);
             // 
             // btnIndex2
             // 
             this.btnIndex2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnIndex2.AutoCheckOnClick = true;
             this.btnIndex2.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btnIndex2.Dock = System.Windows.Forms.DockStyle.Right;
             this.btnIndex2.Font = new System.Drawing.Font("微软雅黑", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -130,6 +129,7 @@
             this.btnIndex2.TabIndex = 10;
             this.btnIndex2.Text = "2";
             this.btnIndex2.CheckedChanged += new System.EventHandler(this.btnCommon_CheckedChanged);
+            this.btnIndex2.Click += new System.EventHandler(this.btnCommon_Click);
             // 
             // btnIndex1
             // 
@@ -145,7 +145,7 @@
             this.btnIndex1.TabIndex = 11;
             this.btnIndex1.Text = "1";
             this.btnIndex1.CheckedChanged += new System.EventHandler(this.btnCommon_CheckedChanged);
-            this.btnIndex1.Click += new System.EventHandler(this.btnIndex1_Click);
+            this.btnIndex1.Click += new System.EventHandler(this.btnCommon_Click);
             // 
             // IndexControl
             // 

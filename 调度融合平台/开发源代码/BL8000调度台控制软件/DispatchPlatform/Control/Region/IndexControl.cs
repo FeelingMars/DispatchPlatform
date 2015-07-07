@@ -14,7 +14,6 @@ namespace DispatchPlatform.Control
     internal partial class IndexControl : UserControl
     {
         public event EventHandler<SelectIndexChangeEventArgs> SelectIndexChanged;
-        public event EventHandler<BeforeSelectIndexChangeEventArgs> BeforeIndexChanged;
 
         private const int ViewIndexCount = 5;
         private int m_IndexOffset = 0;
@@ -44,9 +43,6 @@ namespace DispatchPlatform.Control
                     m_SelectIndex = value;
                 }
                 m_IndexOffset = m_SelectIndex - ViewIndexCount < 0 ? 0 : m_SelectIndex - ViewIndexCount + 1;
-
-
-
             }
         }
 
@@ -58,36 +54,52 @@ namespace DispatchPlatform.Control
             this.btnIndex3.Tag = 2;
             this.btnIndex4.Tag = 3;
             this.btnIndex5.Tag = 4;
+            UpdateBtnEnable();
+        }
+
+        private void UpdateBtnEnable()
+        {
+            this.btnIndex1.Enabled = Convert.ToInt32(this.btnIndex1.Text) - 1 <= m_MaxIndex;
+            this.btnIndex2.Enabled = Convert.ToInt32(this.btnIndex2.Text) - 1 <= m_MaxIndex;
+            this.btnIndex3.Enabled = Convert.ToInt32(this.btnIndex3.Text) - 1 <= m_MaxIndex;
+            this.btnIndex4.Enabled = Convert.ToInt32(this.btnIndex4.Text) - 1 <= m_MaxIndex;
+            this.btnIndex5.Enabled = Convert.ToInt32(this.btnIndex5.Text) - 1 <= m_MaxIndex;
+            this.btnIndexPre.Enabled = m_IndexOffset > 0;
+            this.btnIndexNext.Enabled = (m_IndexOffset + 1) * ViewIndexCount <= m_MaxIndex;
         }
 
         private void btnIndexNext_Click(object sender, EventArgs e)
         {
             m_IndexOffset += 1;
             ChangePage();
+            UpdateBtnEnable();
         }
 
         private void btnIndexPre_Click(object sender, EventArgs e)
         {
             m_IndexOffset -= 1;
             ChangePage();
+            UpdateBtnEnable();
         }
 
         private bool m_CauseCheckedChangedEvent = true;
         private void btnCommon_CheckedChanged(object sender, EventArgs e)
         {
+            if (!m_CauseCheckedChangedEvent)
+                return;
             ButtonX currentControl = (ButtonX)sender;
 
-            int index = Convert.ToInt32(currentControl.Tag);
+            int btnIndex = Convert.ToInt32(currentControl.Tag);
 
             m_CauseCheckedChangedEvent = false;
 
             ChangeBtnCheck(false, currentControl);
 
             m_CauseCheckedChangedEvent = true;
-            m_SelectIndex = index + m_IndexOffset;
+            m_SelectIndex = btnIndex + m_IndexOffset * ViewIndexCount;
             if (SelectIndexChanged != null)
             {
-                SelectIndexChanged(this, new SelectIndexChangeEventArgs() { Index = index });
+                SelectIndexChanged(this, new SelectIndexChangeEventArgs() { Index = m_SelectIndex });
             }
         }
 
@@ -115,38 +127,38 @@ namespace DispatchPlatform.Control
             }
         }
 
-        private void btnIndex1_Click(object sender, EventArgs e)
+        private void btnCommon_Click(object sender, EventArgs e)
         {
             ButtonX currentControl = (ButtonX)sender;
 
-            if (BeforeIndexChanged != null)
+            int btnIndex = Convert.ToInt32(currentControl.Tag);
+            int currentIndex = btnIndex + m_IndexOffset;
+            if (currentIndex == m_SelectIndex)
             {
-                BeforeSelectIndexChangeEventArgs args = new BeforeSelectIndexChangeEventArgs()
-                {
-                    BeforeIndex = m_SelectIndex,
-                };
-                BeforeIndexChanged(this, args);
-                if (args.Cancel)
-                {
-                    return;
-                }
+                return;
             }
-            currentControl.Checked = true;
+            else
+            {
+                currentControl.Checked = true;
+            }
         }
 
         private void ChangePage()
         {
-            this.btnIndex1.Text = (Convert.ToInt32(this.btnIndex1.Tag) + ViewIndexCount * m_IndexOffset).ToString();
-            this.btnIndex2.Text = (Convert.ToInt32(this.btnIndex1.Tag) + ViewIndexCount * m_IndexOffset).ToString();
-            this.btnIndex3.Text = (Convert.ToInt32(this.btnIndex1.Tag) + ViewIndexCount * m_IndexOffset).ToString();
-            this.btnIndex4.Text = (Convert.ToInt32(this.btnIndex1.Tag) + ViewIndexCount * m_IndexOffset).ToString();
-            this.btnIndex5.Text = (Convert.ToInt32(this.btnIndex1.Tag) + ViewIndexCount * m_IndexOffset).ToString();
+            this.btnIndex1.Text = (Convert.ToInt32(this.btnIndex1.Tag) + 1 + ViewIndexCount * m_IndexOffset).ToString();
+            this.btnIndex2.Text = (Convert.ToInt32(this.btnIndex2.Tag) + 1 + ViewIndexCount * m_IndexOffset).ToString();
+            this.btnIndex3.Text = (Convert.ToInt32(this.btnIndex3.Tag) + 1 + ViewIndexCount * m_IndexOffset).ToString();
+            this.btnIndex4.Text = (Convert.ToInt32(this.btnIndex4.Tag) + 1 + ViewIndexCount * m_IndexOffset).ToString();
+            this.btnIndex5.Text = (Convert.ToInt32(this.btnIndex5.Tag) + 1 + ViewIndexCount * m_IndexOffset).ToString();
 
-            this.btnIndexPre.Enabled = m_IndexOffset > 0;
-            this.btnIndexNext.Enabled = m_IndexOffset * ViewIndexCount <= m_MaxIndex;
+            float fontsize = m_IndexOffset > 0 ? 12F : 18F;
+            this.btnIndex1.Font = new Font(this.btnIndex1.Font.FontFamily, fontsize);
+            this.btnIndex2.Font = new Font(this.btnIndex2.Font.FontFamily, fontsize);
+            this.btnIndex3.Font = new Font(this.btnIndex3.Font.FontFamily, fontsize);
+            this.btnIndex4.Font = new Font(this.btnIndex4.Font.FontFamily, fontsize);
+            this.btnIndex5.Font = new Font(this.btnIndex5.Font.FontFamily, fontsize);
+
 
         }
     }
-
-
 }
