@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FromRegionView));
             DevComponents.DotNetBar.Rendering.SuperTabColorTable superTabColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabColorTable();
             DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable superTabLinearGradientColorTable1 = new DevComponents.DotNetBar.Rendering.SuperTabLinearGradientColorTable();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FromRegionView));
             this.panel2 = new System.Windows.Forms.Panel();
-            this.buttonX1 = new DevComponents.DotNetBar.ButtonX();
+            this.buttonClose = new DevComponents.DotNetBar.ButtonX();
             this.btnExit = new DevComponents.DotNetBar.ButtonX();
             this.lblTitle = new DevComponents.DotNetBar.LabelX();
             this.panelRight = new System.Windows.Forms.Panel();
             this.btnRegionView = new DevComponents.DotNetBar.ButtonX();
-            this.superTabControlRegion = new DevComponents.DotNetBar.SuperTabControl();
             this.timeControl1 = new DispatchPlatform.Control.TimeControl();
+            this.superTabControlRegion = new DevComponents.DotNetBar.SuperTabControl();
             this.panel2.SuspendLayout();
             this.panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlRegion)).BeginInit();
@@ -48,7 +48,7 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.BackgroundImage = global::DispatchPlatform.Properties.Resources.TopBackGround;
-            this.panel2.Controls.Add(this.buttonX1);
+            this.panel2.Controls.Add(this.buttonClose);
             this.panel2.Controls.Add(this.btnExit);
             this.panel2.Controls.Add(this.lblTitle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
@@ -57,22 +57,23 @@
             this.panel2.Size = new System.Drawing.Size(994, 50);
             this.panel2.TabIndex = 2;
             // 
-            // buttonX1
+            // buttonClose
             // 
-            this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.buttonX1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonX1.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
-            this.buttonX1.FocusCuesEnabled = false;
-            this.buttonX1.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonX1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(150)))));
-            this.buttonX1.HotTrackingStyle = DevComponents.DotNetBar.eHotTrackingStyle.None;
-            this.buttonX1.Image = global::DispatchPlatform.Properties.Resources.btnExit;
-            this.buttonX1.Location = new System.Drawing.Point(829, 10);
-            this.buttonX1.Name = "buttonX1";
-            this.buttonX1.Size = new System.Drawing.Size(78, 32);
-            this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.buttonX1.TabIndex = 57;
-            this.buttonX1.Text = "返回首页";
+            this.buttonClose.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
+            this.buttonClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonClose.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
+            this.buttonClose.FocusCuesEnabled = false;
+            this.buttonClose.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonClose.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(238)))), ((int)(((byte)(150)))));
+            this.buttonClose.HotTrackingStyle = DevComponents.DotNetBar.eHotTrackingStyle.None;
+            this.buttonClose.Image = global::DispatchPlatform.Properties.Resources.btnExit;
+            this.buttonClose.Location = new System.Drawing.Point(829, 10);
+            this.buttonClose.Name = "buttonClose";
+            this.buttonClose.Size = new System.Drawing.Size(78, 32);
+            this.buttonClose.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.buttonClose.TabIndex = 57;
+            this.buttonClose.Text = "返回首页";
+            this.buttonClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
             // btnExit
             // 
@@ -90,6 +91,7 @@
             this.btnExit.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExit.TabIndex = 56;
             this.btnExit.Text = "退出系统";
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // lblTitle
             // 
@@ -113,9 +115,9 @@
             this.panelRight.Controls.Add(this.btnRegionView);
             this.panelRight.Controls.Add(this.timeControl1);
             this.panelRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRight.Location = new System.Drawing.Point(831, 50);
+            this.panelRight.Location = new System.Drawing.Point(829, 50);
             this.panelRight.Name = "panelRight";
-            this.panelRight.Size = new System.Drawing.Size(163, 544);
+            this.panelRight.Size = new System.Drawing.Size(165, 544);
             this.panelRight.TabIndex = 4;
             // 
             // btnRegionView
@@ -126,13 +128,22 @@
             this.btnRegionView.ColorTable = DevComponents.DotNetBar.eButtonColor.Flat;
             this.btnRegionView.HoverImage = global::DispatchPlatform.Properties.Resources.MeetingNorml;
             this.btnRegionView.Image = global::DispatchPlatform.Properties.Resources.MeetingNorml;
-            this.btnRegionView.Location = new System.Drawing.Point(3, 332);
+            this.btnRegionView.Location = new System.Drawing.Point(5, 332);
             this.btnRegionView.Name = "btnRegionView";
             this.btnRegionView.PressedImage = global::DispatchPlatform.Properties.Resources.MeetingSelect;
             this.btnRegionView.Size = new System.Drawing.Size(160, 81);
             this.btnRegionView.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnRegionView.TabIndex = 54;
             this.btnRegionView.Click += new System.EventHandler(this.btnRegionView_Click);
+            // 
+            // timeControl1
+            // 
+            this.timeControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.timeControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("timeControl1.BackgroundImage")));
+            this.timeControl1.Location = new System.Drawing.Point(3, 422);
+            this.timeControl1.Name = "timeControl1";
+            this.timeControl1.Size = new System.Drawing.Size(163, 85);
+            this.timeControl1.TabIndex = 0;
             // 
             // superTabControlRegion
             // 
@@ -158,7 +169,7 @@
             this.superTabControlRegion.ReorderTabsEnabled = false;
             this.superTabControlRegion.SelectedTabFont = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold);
             this.superTabControlRegion.SelectedTabIndex = 0;
-            this.superTabControlRegion.Size = new System.Drawing.Size(831, 544);
+            this.superTabControlRegion.Size = new System.Drawing.Size(829, 544);
             this.superTabControlRegion.TabAlignment = DevComponents.DotNetBar.eTabStripAlignment.Bottom;
             this.superTabControlRegion.TabFont = new System.Drawing.Font("宋体", 16F, System.Drawing.FontStyle.Bold);
             this.superTabControlRegion.TabHorizontalSpacing = 10;
@@ -172,14 +183,6 @@
             this.superTabControlRegion.Text = "superTabControl4";
             this.superTabControlRegion.SelectedTabChanging += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangingEventArgs>(this.superTabControlRegion_SelectedTabChanging);
             // 
-            // timeControl1
-            // 
-            this.timeControl1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("timeControl1.BackgroundImage")));
-            this.timeControl1.Location = new System.Drawing.Point(0, 422);
-            this.timeControl1.Name = "timeControl1";
-            this.timeControl1.Size = new System.Drawing.Size(163, 85);
-            this.timeControl1.TabIndex = 0;
-            // 
             // FromRegionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -191,10 +194,12 @@
             this.Controls.Add(this.panel2);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FromRegionView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FromRegionView";
+            this.Text = "区域展示";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FromRegionView_FormClosing);
             this.Load += new System.EventHandler(this.FromRegionView_Load);
             this.panel2.ResumeLayout(false);
             this.panelRight.ResumeLayout(false);
@@ -212,6 +217,6 @@
         private DevComponents.DotNetBar.SuperTabControl superTabControlRegion;
         private DevComponents.DotNetBar.LabelX lblTitle;
         private DevComponents.DotNetBar.ButtonX btnExit;
-        private DevComponents.DotNetBar.ButtonX buttonX1;
+        private DevComponents.DotNetBar.ButtonX buttonClose;
     }
 }

@@ -1,5 +1,6 @@
 ﻿
-namespace DispatchPlatform.Control
+using DispatchPlatform.Control;
+namespace DispatchPlatform.Region
 {
     partial class RegionMemberGroupControl
     {
@@ -59,6 +60,8 @@ namespace DispatchPlatform.Control
             this.btnGroupCall.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnGroupCall.TabIndex = 1;
             this.btnGroupCall.Text = "群呼";
+            this.btnGroupCall.Visible = false;
+            this.btnGroupCall.Click += new System.EventHandler(this.btnGroupCall_Click);
             // 
             // indexControl
             // 

@@ -6,7 +6,7 @@ using DispatchPlatform.Command;
 using DispatchPlatform.Data;
 using CommControl;
 
-namespace DispatchPlatform.Control.Region
+namespace DispatchPlatform.Region
 {
     internal class RegionTalkControl
     {
@@ -48,8 +48,8 @@ namespace DispatchPlatform.Control.Region
         {
             RegionManage.GetInstance().UpdateMemberStatus(e.UserNumber.ToString(), e.UserLineStatus);
             RegionManage.GetInstance().UpdateMemberDestNumber(e.UserNumber.ToString(), e.PeerPartNumber.ToString());
-            //RegionMemberManage.GetInstance().UpdateMemberDestNumber(e.PeerPartNumber.ToString(), _tempSingleControl.IsDispatch?e.UserNumber.ToString():"");  
         }
+
         private void _talkControl_OnDispatchStateChanged(object obj, TalkControl.DispatchArgs e)
         {
             switch (e.DispatchCmdSubType)
@@ -81,10 +81,13 @@ namespace DispatchPlatform.Control.Region
                     RegionManage.GetInstance().UpdateMemberStatus(e.FromNumber.ToString(), TalkControl.EnumUserLineStatus.Busy);
                     break;
                 case TalkControl.EnumDispatchStatus.released:
-                    // bc_OnMsg(string.Format("呼叫释放"));
-                    break;
                 case TalkControl.EnumDispatchStatus.failure:
-                    //bc_OnMsg(string.Format("呼叫失败"));
+                    //查找FromNumber对应的对方号码
+                    DB_Talk.Model.Data_DispatchLog log = DispatchLogBLL.GetDispatchLog(PublicEnums.EnumNormalCmd.Call, e.FromNumber);
+                    if (log != null)
+                    {
+                        RegionManage.GetInstance().UpdateMemberStatus(log.DispatchedNumbers.ToString(), TalkControl.EnumUserLineStatus.Idle);
+                    }
                     break;
                 case TalkControl.EnumDispatchStatus.userRinging:
                     if (e.ToNumber != 0)

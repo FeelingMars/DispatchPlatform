@@ -7,30 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DispatchPlatform.Data;
+using DispatchPlatform.Region;
 
 namespace DispatchPlatform
 {
     public partial class FromRegionView : Form
     {
-        private Dictionary<int, SingleRegionControl> m_RegionControlCache = new Dictionary<int, SingleRegionControl>();
+        private Dictionary<int, SingleRegionControl> m_RegionControlCache = new Dictionary<int, SingleRegionControl>(); //区域控件缓存
+        public event EventHandler ApplicationExit;          //程序退出事件
 
         public FromRegionView()
         {
             InitializeComponent();
-            this.Disposed += new EventHandler(FromRegionView_Disposed);
         }
 
-        void FromRegionView_Disposed(object sender, EventArgs e)
-        {
-            RegionManage.GetInstance().Clear();
-        }
+        #region 内部事件处理
 
         private void FromRegionView_Load(object sender, EventArgs e)
         {
+            lblTitle.Text = Pub._configModel.Title;     //初始化标题
+            RegionTalkControl.GetInstance().RegeditTalk();          //注册talk回调事件处理
+            this.superTabControlRegion.Tabs.Clear();
+
             RegionDataInfo[] regionDatas = new RegionDataInfo[] { 
                 new RegionDataInfo(){ RegionID = 1, Name = "test1"}};
 
-            this.superTabControlRegion.Tabs.Clear();
             if (regionDatas == null)
                 return;
 
@@ -50,11 +51,42 @@ namespace DispatchPlatform
             {
                 //未加载
                 //需要进行数据加载
-
                 LazyLoadSingleRegion(regionData.RegionID);
             }
         }
 
+        private void btnRegionView_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FromRegionView_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            RegionTalkControl.GetInstance().UnregeditTalk();
+            RegionManage.GetInstance().Dispose();
+        }
+
+        private void buttonClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            if (ApplicationExit != null)
+            {
+                ApplicationExit(this, EventArgs.Empty);
+            }
+        }
+
+        #endregion
+
+        #region 内部功能函数
+
+        /// <summary>
+        /// 根据区域数据创建区域控件
+        /// </summary>
+        /// <param name="data"></param>
         private void CreateRegionControlByData(RegionDataInfo data)
         {
             SingleRegionControl regionControl = new SingleRegionControl();
@@ -120,15 +152,15 @@ namespace DispatchPlatform
             };
         }
 
+        /// <summary>
+        /// 延迟加载单个区域控件及内部成员
+        /// </summary>
+        /// <param name="regionID"></param>
         private void LazyLoadSingleRegion(int regionID)
         {
             m_RegionControlCache[regionID].LoadData(regionID);
         }
 
-        private void btnRegionView_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
+        #endregion
     }
 }

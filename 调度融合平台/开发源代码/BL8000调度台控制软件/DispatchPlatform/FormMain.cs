@@ -2967,8 +2967,15 @@ namespace DispatchPlatform
         private void btnRegionView_Click(object sender, EventArgs e)
         {
             FromRegionView regionView = new FromRegionView();
+
             regionView.WindowState = FormWindowState.Maximized;
+            regionView.ApplicationExit += new EventHandler(regionView_ApplicationExit);
             regionView.ShowDialog();
+        }
+
+        void regionView_ApplicationExit(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 

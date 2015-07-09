@@ -658,7 +658,6 @@ namespace VoiceDispatchManage.UI
 
         public frmDispatchNumber()
         {
-            DevExpress.XtraEditors.Controls.Localizer.Active = new DevExpress.LocalizationCHS.DevExpressXtraEditorsLocalizationCHS();
          
             InitializeComponent();
             labMes.Text = "";

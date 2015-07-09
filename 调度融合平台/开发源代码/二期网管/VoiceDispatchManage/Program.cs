@@ -16,6 +16,8 @@ namespace VoiceDispatchManage
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+            System.Threading.Thread.CurrentThread.CurrentUICulture =
+                new System.Globalization.CultureInfo("zh-Hans");
             //读本地配置文件
             Global.Params.ConfigModel = (new Config.ConfigBLL()).ReadConfig();  
             //OpenDataBase();

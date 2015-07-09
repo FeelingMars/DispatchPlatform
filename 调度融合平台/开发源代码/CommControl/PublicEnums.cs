@@ -223,6 +223,7 @@ namespace CommControl
         public enum EnumRegionMemberType
         {
             WiFiPhone = 1,
+            G3GPhone = 2,
             TelPhone = 3,
             Radio = 5,
             Camera = 7,

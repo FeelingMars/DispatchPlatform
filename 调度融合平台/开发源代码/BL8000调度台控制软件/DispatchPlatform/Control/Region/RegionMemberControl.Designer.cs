@@ -43,12 +43,13 @@
             // lblSelfNumber
             // 
             this.lblSelfNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSelfNumber.AutoSize = true;
             this.lblSelfNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblSelfNumber.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblSelfNumber.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
             this.lblSelfNumber.Location = new System.Drawing.Point(85, 24);
             this.lblSelfNumber.Name = "lblSelfNumber";
-            this.lblSelfNumber.Size = new System.Drawing.Size(69, 13);
+            this.lblSelfNumber.Size = new System.Drawing.Size(57, 12);
             this.lblSelfNumber.TabIndex = 0;
             this.lblSelfNumber.Text = "本机号码";
             this.lblSelfNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -59,12 +60,13 @@
             // lblSelfName
             // 
             this.lblSelfName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSelfName.AutoSize = true;
             this.lblSelfName.BackColor = System.Drawing.Color.Transparent;
             this.lblSelfName.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblSelfName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
             this.lblSelfName.Location = new System.Drawing.Point(85, 9);
             this.lblSelfName.Name = "lblSelfName";
-            this.lblSelfName.Size = new System.Drawing.Size(70, 13);
+            this.lblSelfName.Size = new System.Drawing.Size(57, 12);
             this.lblSelfName.TabIndex = 1;
             this.lblSelfName.Text = "本机名称";
             this.lblSelfName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -91,12 +93,13 @@
             // lblPeerNumber
             // 
             this.lblPeerNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPeerNumber.AutoSize = true;
             this.lblPeerNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblPeerNumber.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblPeerNumber.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblPeerNumber.Location = new System.Drawing.Point(87, 40);
             this.lblPeerNumber.Name = "lblPeerNumber";
-            this.lblPeerNumber.Size = new System.Drawing.Size(67, 13);
+            this.lblPeerNumber.Size = new System.Drawing.Size(57, 12);
             this.lblPeerNumber.TabIndex = 3;
             this.lblPeerNumber.Text = "对方号码";
             this.lblPeerNumber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -107,12 +110,13 @@
             // lblTime
             // 
             this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblTime.AutoSize = true;
             this.lblTime.BackColor = System.Drawing.Color.Transparent;
             this.lblTime.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblTime.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.lblTime.Location = new System.Drawing.Point(89, 74);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(65, 12);
+            this.lblTime.Size = new System.Drawing.Size(61, 12);
             this.lblTime.TabIndex = 5;
             this.lblTime.Text = "00:00:00";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -144,12 +148,13 @@
             // lblPeerNumberName
             // 
             this.lblPeerNumberName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblPeerNumberName.AutoSize = true;
             this.lblPeerNumberName.BackColor = System.Drawing.Color.Transparent;
             this.lblPeerNumberName.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.lblPeerNumberName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(48)))), ((int)(((byte)(65)))), ((int)(((byte)(100)))));
             this.lblPeerNumberName.Location = new System.Drawing.Point(63, 58);
             this.lblPeerNumberName.Name = "lblPeerNumberName";
-            this.lblPeerNumberName.Size = new System.Drawing.Size(93, 13);
+            this.lblPeerNumberName.Size = new System.Drawing.Size(85, 12);
             this.lblPeerNumberName.TabIndex = 8;
             this.lblPeerNumberName.Text = "对方号码Name";
             this.lblPeerNumberName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -171,10 +176,12 @@
             this.Name = "RegionMemberControl";
             this.Padding = new System.Windows.Forms.Padding(1);
             this.Size = new System.Drawing.Size(160, 92);
+            this.SizeChanged += new System.EventHandler(this.RegionMemberControl_SizeChanged);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseUp);
             ((System.ComponentModel.ISupportInitialize)(this.picTop)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

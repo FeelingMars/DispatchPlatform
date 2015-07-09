@@ -6,9 +6,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using DispatchPlatform.Control;
+using DispatchPlatform.Region;
 
-namespace DispatchPlatform
+namespace DispatchPlatform.Region
 {
     public partial class SingleRegionControl : UserControl
     {
@@ -62,19 +62,22 @@ namespace DispatchPlatform
 
         private void ResizeInnerControl()
         {
-            this.SuspendLayout();
-            int wholeWidth = this.Width;
-            //单个长度 = （总长度-（控件个数）*间隙）/控件个数
-            int singleWidth = m_RegionMemberGroupControls.Count > 0 ? (wholeWidth - 2 * 2 * m_InnerControlSpace) / 2 : wholeWidth;
-            int wholeHeigh = this.Height;
-            int singleHeigh = m_RegionMemberGroupControls.Count > 0 ? (wholeHeigh - 2 * 2 * m_InnerControlSpace) / 2 : wholeHeigh;
-            foreach (var item in m_RegionMemberGroupControls)
+            if (this.IsHandleCreated)
             {
-                item.Width = singleWidth;
-                item.Height = singleHeigh;
-                item.Margin = new Padding(m_InnerControlSpace, m_InnerControlSpace, m_InnerControlSpace, m_InnerControlSpace);
+                this.flowLayoutPanel1.SuspendLayout();
+                int wholeWidth = this.Width;
+                //单个长度 = （总长度-（控件个数）*间隙）/控件个数
+                int singleWidth = m_RegionMemberGroupControls.Count > 0 ? (wholeWidth - 2 * 2 * m_InnerControlSpace) / 2 : wholeWidth;
+                int wholeHeigh = this.Height;
+                int singleHeigh = m_RegionMemberGroupControls.Count > 0 ? (wholeHeigh - 2 * 2 * m_InnerControlSpace) / 2 : wholeHeigh;
+                foreach (var item in m_RegionMemberGroupControls)
+                {
+                    item.Width = singleWidth;
+                    item.Height = singleHeigh;
+                    item.Margin = new Padding(m_InnerControlSpace, m_InnerControlSpace, m_InnerControlSpace, m_InnerControlSpace);
+                }
+                this.flowLayoutPanel1.ResumeLayout();
             }
-            this.ResumeLayout(true);
         }
     }
 }

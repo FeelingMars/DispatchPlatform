@@ -1,6 +1,5 @@
 ﻿using DispatchPlatform.Data;
-using DispatchPlatform.Control;
-namespace DispatchPlatform
+namespace DispatchPlatform.Region
 {
     partial class SingleRegionControl
     {
@@ -32,10 +31,10 @@ namespace DispatchPlatform
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SingleRegionControl));
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.regionMemberPanelControlGW = new DispatchPlatform.Control.RegionMemberGroupControl();
-            this.regionMemberPanelControlPhone = new DispatchPlatform.Control.RegionMemberGroupControl();
-            this.regionMemberPanelControlRadio = new DispatchPlatform.Control.RegionMemberGroupControl();
-            this.regionMemberPanelControlCamera = new DispatchPlatform.Control.RegionMemberGroupControl();
+            this.regionMemberPanelControlGW = new DispatchPlatform.Region.RegionMemberGroupControl();
+            this.regionMemberPanelControlPhone = new DispatchPlatform.Region.RegionMemberGroupControl();
+            this.regionMemberPanelControlRadio = new DispatchPlatform.Region.RegionMemberGroupControl();
+            this.regionMemberPanelControlCamera = new DispatchPlatform.Region.RegionMemberGroupControl();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 

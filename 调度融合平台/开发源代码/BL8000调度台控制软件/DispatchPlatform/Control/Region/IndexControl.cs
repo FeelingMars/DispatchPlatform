@@ -66,6 +66,13 @@ namespace DispatchPlatform.Control
             this.btnIndex5.Enabled = Convert.ToInt32(this.btnIndex5.Text) - 1 <= m_MaxIndex;
             this.btnIndexPre.Enabled = m_IndexOffset > 0;
             this.btnIndexNext.Enabled = (m_IndexOffset + 1) * ViewIndexCount <= m_MaxIndex;
+            m_CauseCheckedChangedEvent = false;
+            this.btnIndex1.Checked = Convert.ToInt32(this.btnIndex1.Text) - 1 == m_SelectIndex;
+            this.btnIndex2.Checked = Convert.ToInt32(this.btnIndex2.Text) - 1 == m_SelectIndex;
+            this.btnIndex3.Checked = Convert.ToInt32(this.btnIndex3.Text) - 1 == m_SelectIndex;
+            this.btnIndex4.Checked = Convert.ToInt32(this.btnIndex4.Text) - 1 == m_SelectIndex;
+            this.btnIndex5.Checked = Convert.ToInt32(this.btnIndex5.Text) - 1 == m_SelectIndex;
+            m_CauseCheckedChangedEvent = true;
         }
 
         private void btnIndexNext_Click(object sender, EventArgs e)
@@ -157,8 +164,6 @@ namespace DispatchPlatform.Control
             this.btnIndex3.Font = new Font(this.btnIndex3.Font.FontFamily, fontsize);
             this.btnIndex4.Font = new Font(this.btnIndex4.Font.FontFamily, fontsize);
             this.btnIndex5.Font = new Font(this.btnIndex5.Font.FontFamily, fontsize);
-
-
         }
     }
 }

@@ -21,8 +21,6 @@ namespace VoiceDispatchManage.Log
 
         void frmAlarmLog_Load(object sender, EventArgs e)
         {
-            DevExpress.XtraEditors.Controls.Localizer.Active = new DevExpress.LocalizationCHS.DevExpressXtraEditorsLocalizationCHS();
-            DevExpress.XtraGrid.Localization.GridLocalizer.Active = new DevExpress.LocalizationCHS.DevExpressXtraGridLocalizationCHS();
             gridView1.ColumnFilterChanged += new EventHandler(gridView1_ColumnFilterChanged);
             //gridView1.FilterEditorCreated += new DevExpress.XtraGrid.Views.Base.FilterControlEventHandler(gridView1_FilterEditorCreated);
             gridControlEx1.InitView(this.gridView1);

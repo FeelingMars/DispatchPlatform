@@ -103,6 +103,26 @@ namespace DispatchPlatform.Region
             {
                 tempMap = DispatchPlatform.Properties.Resources.n_Ring;
             }
+            else if (status == TalkControl.EnumUserLineStatus.Listen)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.n_Listen;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Record)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.n_Record;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Insert)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.n_Insert;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Isolate)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.MeetingMemberIsolate;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Forbid)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.MeetingMemberNoSpeek;
+            }
             else
             {
                 tempMap = DispatchPlatform.Properties.Resources.n_OffLine;
@@ -140,6 +160,26 @@ namespace DispatchPlatform.Region
             {
                 tempMap = DispatchPlatform.Properties.Resources.telephone_m_Ring;
             }
+            else if (status == TalkControl.EnumUserLineStatus.Listen)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.telephone_n_Listen;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Record)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.telephone_n_Record;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Insert)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.telephone_n_Insert;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Isolate)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.telephone_MeetingMemberIsolate;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Forbid)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.telephone_MeetingMemberNoSpeek;
+            }
             else
             {
                 tempMap = DispatchPlatform.Properties.Resources.telephone_n_OffLine;
@@ -176,6 +216,26 @@ namespace DispatchPlatform.Region
             else if (status == TalkControl.EnumUserLineStatus.Ring)
             {
                 tempMap = DispatchPlatform.Properties.Resources.b_m_Ring;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Listen)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.b_n_Listen;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Record)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.b_n_Record;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Insert)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.b_n_Insert;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Isolate)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.b_MeetingMemberIsolate;
+            }
+            else if (status == TalkControl.EnumUserLineStatus.Forbid)
+            {
+                tempMap = DispatchPlatform.Properties.Resources.b_MeetingMemberNoSpeek;
             }
             else
             {

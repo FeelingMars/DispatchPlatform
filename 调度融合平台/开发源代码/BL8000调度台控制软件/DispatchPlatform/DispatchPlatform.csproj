@@ -108,16 +108,26 @@
     <Compile Include="Command\NormalCommand\EndRecordCommand.cs" />
     <Compile Include="Command\NormalCommand\SelectLemcAnswerCommand.cs" />
     <Compile Include="Command\NormalCommand\GroupCallCommand.cs" />
+    <Compile Include="Command\RegionCommand\RegionCallCommand.cs" />
+    <Compile Include="Command\RegionCommand\RegionGroupCallCommand.cs" />
+    <Compile Include="Command\RegionCommand\RegionHandupCommand.cs" />
+    <Compile Include="Command\RegionCommand\RegionSelectAnswerCommand.cs" />
     <Compile Include="Control\DispatchCommandBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\DispatchCommandBar.Designer.cs">
       <DependentUpon>DispatchCommandBar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\IndexControl.cs">
+    <Compile Include="Control\Region\FromRegionView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Region\FromRegionView.Designer.cs">
+      <DependentUpon>FromRegionView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Region\IndexControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\IndexControl.Designer.cs">
+    <Compile Include="Control\Region\IndexControl.Designer.cs">
       <DependentUpon>IndexControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\LemcMemberControl.cs">
@@ -150,11 +160,21 @@
     <Compile Include="Control\PreNextPageControl.Designer.cs">
       <DependentUpon>PreNextPageControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Region\ReginMemberPanelControl.cs">
+    <Compile Include="Control\Region\IRegionMemberOperate.cs" />
+    <Compile Include="Control\Region\MemberAppearance.cs" />
+    <Compile Include="Control\Region\RegionMemberGroupControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\Region\ReginMemberPanelControl.Designer.cs">
-      <DependentUpon>ReginMemberPanelControl.cs</DependentUpon>
+    <Compile Include="Control\Region\RegionMemberGroupControl.Designer.cs">
+      <DependentUpon>RegionMemberGroupControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Region\RegionManage.cs" />
+    <Compile Include="Control\Region\RegionTalkControl.cs" />
+    <Compile Include="Control\Region\SingleRegionControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Region\SingleRegionControl.Designer.cs">
+      <DependentUpon>SingleRegionControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\TimeControl.cs">
       <SubType>UserControl</SubType>
@@ -275,7 +295,10 @@
     <EmbeddedResource Include="Control\DispatchCommandBar.resx">
       <DependentUpon>DispatchCommandBar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\IndexControl.resx">
+    <EmbeddedResource Include="Control\Region\FromRegionView.resx">
+      <DependentUpon>FromRegionView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Region\IndexControl.resx">
       <DependentUpon>IndexControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\LemcMemberControl.resx">
@@ -293,8 +316,11 @@
     <EmbeddedResource Include="Control\PreNextPageControl.resx">
       <DependentUpon>PreNextPageControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Region\ReginMemberPanelControl.resx">
-      <DependentUpon>ReginMemberPanelControl.cs</DependentUpon>
+    <EmbeddedResource Include="Control\Region\RegionMemberGroupControl.resx">
+      <DependentUpon>RegionMemberGroupControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Region\SingleRegionControl.resx">
+      <DependentUpon>SingleRegionControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\TimeControl.resx">
       <DependentUpon>TimeControl.cs</DependentUpon>
