@@ -59,6 +59,7 @@
     <Compile Include="BLL\m_CalledRule.cs" />
     <Compile Include="BLL\m_CallingSource.cs" />
     <Compile Include="BLL\m_Camera.cs" />
+    <Compile Include="BLL\m_CameraInfo.cs" />
     <Compile Include="BLL\m_Departments.cs" />
     <Compile Include="BLL\m_FAP.cs" />
     <Compile Include="BLL\m_Group.cs" />
@@ -71,6 +72,8 @@
     <Compile Include="BLL\m_PRIClock.cs" />
     <Compile Include="BLL\m_PRIInterface.cs" />
     <Compile Include="BLL\m_PRISigLink.cs" />
+    <Compile Include="BLL\m_RegionInfo.cs" />
+    <Compile Include="BLL\m_RegionRelation.cs" />
     <Compile Include="BLL\m_Route.cs" />
     <Compile Include="BLL\m_RouteGroup.cs" />
     <Compile Include="BLL\m_RouteRule.cs" />
@@ -104,6 +107,7 @@
     <Compile Include="DAL\m_CalledRule.cs" />
     <Compile Include="DAL\m_CallingSource.cs" />
     <Compile Include="DAL\m_Camera.cs" />
+    <Compile Include="DAL\m_CameraInfo.cs" />
     <Compile Include="DAL\m_Departments.cs" />
     <Compile Include="DAL\m_FAP.cs" />
     <Compile Include="DAL\m_Group.cs" />
@@ -116,6 +120,8 @@
     <Compile Include="DAL\m_PRIClock.cs" />
     <Compile Include="DAL\m_PRIInterface.cs" />
     <Compile Include="DAL\m_PRISigLink.cs" />
+    <Compile Include="DAL\m_RegionInfo.cs" />
+    <Compile Include="DAL\m_RegionRelation.cs" />
     <Compile Include="DAL\m_Route.cs" />
     <Compile Include="DAL\m_RouteGroup.cs" />
     <Compile Include="DAL\m_RouteRule.cs" />
@@ -150,6 +156,7 @@
     <Compile Include="Model\m_CalledRule.cs" />
     <Compile Include="Model\m_CallingSource.cs" />
     <Compile Include="Model\m_Camera.cs" />
+    <Compile Include="Model\m_CameraInfo.cs" />
     <Compile Include="Model\m_Departments.cs" />
     <Compile Include="Model\m_FAP.cs" />
     <Compile Include="Model\m_Group.cs" />
@@ -161,6 +168,8 @@
     <Compile Include="Model\m_PRIClock.cs" />
     <Compile Include="Model\m_PRIInterface.cs" />
     <Compile Include="Model\m_PRISigLink.cs" />
+    <Compile Include="Model\m_RegionInfo.cs" />
+    <Compile Include="Model\m_RegionRelation.cs" />
     <Compile Include="Model\m_Route.cs" />
     <Compile Include="Model\m_RouteGroup.cs" />
     <Compile Include="Model\m_RouteRule.cs" />

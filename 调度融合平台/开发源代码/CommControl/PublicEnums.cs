@@ -91,7 +91,8 @@ namespace CommControl
             固话 = 3,
             调度席话机 = 4,
             广播 = 5,
-            外部电话 = 6
+            外部电话 = 6,
+            摄像机 = 7,
         }
 
         /// <summary>
@@ -218,7 +219,7 @@ namespace CommControl
         }
 
         /// <summary>
-        /// 区域成员类型
+        /// 区域成员类型 
         /// </summary>
         public enum EnumRegionMemberType
         {
