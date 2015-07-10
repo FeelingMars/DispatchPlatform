@@ -124,6 +124,7 @@ namespace DispatchPlatform.Region
             if (MemberType != CommControl.PublicEnums.EnumRegionMemberType.Camera)
             {
                 List<RegionCallInfo> phoneCallData = new List<RegionCallInfo>();
+              
                 foreach (RegionMemberInfo item in m_DataCache)
                 {
                     phoneCallData.Add(item as RegionCallInfo);

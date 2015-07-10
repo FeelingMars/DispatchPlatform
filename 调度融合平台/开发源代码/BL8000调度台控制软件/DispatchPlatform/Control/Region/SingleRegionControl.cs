@@ -7,17 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using DispatchPlatform.Region;
+using DispatchPlatform.Data;
 
 namespace DispatchPlatform.Region
 {
-    public partial class SingleRegionControl : UserControl
+    internal partial class SingleRegionControl : UserControl
     {
-        private List<RegionMemberGroupControl> m_RegionMemberGroupControls = new List<RegionMemberGroupControl>();
-        private int m_RegionID = 0;
+        private List<RegionMemberGroupControl> m_RegionMemberGroupControls = new List<RegionMemberGroupControl>();      //区域成员组控件缓存
+
+        private int m_InnerControlSpace = 2;            //组控件间距
+
+        #region 属性
+
         /// <summary>
-        /// 间距
+        /// 区域数据
         /// </summary>
-        private int m_InnerControlSpace = 2;
+        internal new RegionDataInfo Tag { get; set; }
 
         /// <summary>
         /// 是否加载完成
@@ -28,25 +33,23 @@ namespace DispatchPlatform.Region
             get;
             private set;
         }
+        #endregion
 
         public SingleRegionControl()
         {
             InitializeComponent();
         }
 
-        public void LoadData(int regionID)
+        public void LoadData()
         {
-            m_RegionID = regionID;
-            regionMemberPanelControlGW.LoadData(regionID, CommControl.PublicEnums.EnumRegionMemberType.TelPhone);
-            regionMemberPanelControlPhone.LoadData(regionID, CommControl.PublicEnums.EnumRegionMemberType.WiFiPhone);
-            regionMemberPanelControlRadio.LoadData(regionID, CommControl.PublicEnums.EnumRegionMemberType.Radio);
-            regionMemberPanelControlCamera.LoadData(regionID, CommControl.PublicEnums.EnumRegionMemberType.Camera);
+            regionMemberPanelControlGW.LoadData(Tag.RegionID, CommControl.PublicEnums.EnumRegionMemberType.TelPhone);
+            regionMemberPanelControlPhone.LoadData(Tag.RegionID, CommControl.PublicEnums.EnumRegionMemberType.WiFiPhone);
+            regionMemberPanelControlRadio.LoadData(Tag.RegionID, CommControl.PublicEnums.EnumRegionMemberType.Radio);
+            regionMemberPanelControlCamera.LoadData(Tag.RegionID, CommControl.PublicEnums.EnumRegionMemberType.Camera);
             m_RegionMemberGroupControls.Add(this.regionMemberPanelControlGW);
             m_RegionMemberGroupControls.Add(this.regionMemberPanelControlRadio);
             m_RegionMemberGroupControls.Add(this.regionMemberPanelControlPhone);
             m_RegionMemberGroupControls.Add(this.regionMemberPanelControlCamera);
-
-            //todo
 
             LoadFinish = true;
         }
@@ -62,7 +65,7 @@ namespace DispatchPlatform.Region
 
         private void ResizeInnerControl()
         {
-            if (this.IsHandleCreated)
+            if (this.IsHandleCreated && this.Visible)
             {
                 this.flowLayoutPanel1.SuspendLayout();
                 int wholeWidth = this.Width;
@@ -78,6 +81,11 @@ namespace DispatchPlatform.Region
                 }
                 this.flowLayoutPanel1.ResumeLayout();
             }
+        }
+
+        private void regionMemberPanelControlPhone_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

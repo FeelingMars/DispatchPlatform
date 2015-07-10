@@ -21,6 +21,7 @@ namespace DispatchPlatform.Command
 
         public bool Begin()
         {
+            DispatchPlatform.Command.DispatchLogBLL.WriteLog(CommControl.PublicEnums.EnumNormalCmd.Call, Convert.ToInt64(m_OraNumber), m_DestNumber, "");
             return TalkSDK.MBOX_MakeCall(m_Handle, Convert.ToInt64(m_OraNumber), Convert.ToInt64(m_DestNumber));
         }
     }

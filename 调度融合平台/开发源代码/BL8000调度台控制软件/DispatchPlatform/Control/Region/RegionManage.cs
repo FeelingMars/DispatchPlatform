@@ -91,9 +91,16 @@ namespace DispatchPlatform.Region
             return m_MemeberDataCache.ContainsKey(memberKey);
         }
 
-        public void RegeditMemberData(RegionMemberInfo memeberData)
+        public void RegeditMemberData(RegionMemberInfo memberData)
         {
-            m_MemeberDataCache.Add(memeberData.PrimaryKey, memeberData);
+            if (!m_MemeberDataCache.ContainsKey(memberData.PrimaryKey))
+            {
+                m_MemeberDataCache.Add(memberData.PrimaryKey, memberData);
+            }
+            else
+            {
+                throw new Exception(string.Format("memberData：{0} 已注册。", memberData.PrimaryKey));
+            }
         }
 
         public void RegeditMemberControl(RegionMemberControl regionMemberControl)

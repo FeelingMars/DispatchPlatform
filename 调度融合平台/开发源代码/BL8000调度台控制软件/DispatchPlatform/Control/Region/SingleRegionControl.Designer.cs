@@ -65,6 +65,7 @@ namespace DispatchPlatform.Region
             this.regionMemberPanelControlPhone.Name = "regionMemberPanelControlPhone";
             this.regionMemberPanelControlPhone.Size = new System.Drawing.Size(311, 173);
             this.regionMemberPanelControlPhone.TabIndex = 2;
+            this.regionMemberPanelControlPhone.Click += new System.EventHandler(this.regionMemberPanelControlPhone_Click);
             // 
             // regionMemberPanelControlRadio
             // 

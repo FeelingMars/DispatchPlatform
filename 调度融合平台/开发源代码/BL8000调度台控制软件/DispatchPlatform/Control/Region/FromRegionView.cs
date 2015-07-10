@@ -28,17 +28,7 @@ namespace DispatchPlatform
             lblTitle.Text = Pub._configModel.Title;     //初始化标题
             RegionTalkControl.GetInstance().RegeditTalk();          //注册talk回调事件处理
             this.superTabControlRegion.Tabs.Clear();
-
-            RegionDataInfo[] regionDatas = new RegionDataInfo[] { 
-                new RegionDataInfo(){ RegionID = 1, Name = "test1"}};
-
-            if (regionDatas == null)
-                return;
-
-            foreach (RegionDataInfo data in regionDatas)
-            {
-                CreateRegionControlByData(data);
-            }
+            this.backgroundWorker.RunWorkerAsync();
         }
 
         private void superTabControlRegion_SelectedTabChanging(object sender, DevComponents.DotNetBar.SuperTabStripSelectedTabChangingEventArgs e)
@@ -90,6 +80,7 @@ namespace DispatchPlatform
         private void CreateRegionControlByData(RegionDataInfo data)
         {
             SingleRegionControl regionControl = new SingleRegionControl();
+            regionControl.Tag = data;
             regionControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(41)))), ((int)(((byte)(48)))));
             regionControl.Dock = System.Windows.Forms.DockStyle.Fill;
             m_RegionControlCache.Add(data.RegionID, regionControl);
@@ -117,7 +108,6 @@ namespace DispatchPlatform
             currentTab.Text = data.Name;
             currentTab.Tag = data;
             this.superTabControlRegion.Tabs.Add(currentTab);
-
 
             currentTab.TabFont = new Font("宋体", 16F, System.Drawing.FontStyle.Bold);
             currentTab.SelectedTabFont = new Font("宋体", 16F, System.Drawing.FontStyle.Bold);
@@ -158,9 +148,27 @@ namespace DispatchPlatform
         /// <param name="regionID"></param>
         private void LazyLoadSingleRegion(int regionID)
         {
-            m_RegionControlCache[regionID].LoadData(regionID);
+            m_RegionControlCache[regionID].LoadData();
         }
 
         #endregion
+
+        private void backgroundWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            RegionDataInfo[] regionDatas = new RegionBLL().GetRegionDataInfo((int)Pub.manageModel.BoxID);
+            e.Result = regionDatas;
+        }
+
+        private void backgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            RegionDataInfo[] regionDatas = e.Result as RegionDataInfo[];
+            if (regionDatas == null)
+                return;
+
+            foreach (RegionDataInfo data in regionDatas)
+            {
+                CreateRegionControlByData(data);
+            }
+        }
     }
 }

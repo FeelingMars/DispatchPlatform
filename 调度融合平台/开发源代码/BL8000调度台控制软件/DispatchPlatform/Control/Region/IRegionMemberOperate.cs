@@ -98,21 +98,23 @@ namespace DispatchPlatform.Region
         /// <returns></returns>
         public RegionMemberInfo[] LoadData(int regionID)
         {
-            //test
+            if (MemberType == PublicEnums.EnumRegionMemberType.WiFiPhone ||
+                 MemberType == PublicEnums.EnumRegionMemberType.G3GPhone)
+            {
+                List<RegionMemberInfo> dataList = new List<RegionMemberInfo>();
+                dataList.AddRange(new RegionBLL().GetRegionMemberData(regionID, PublicEnums.EnumRegionMemberType.G3GPhone));
+                dataList.AddRange(new RegionBLL().GetRegionMemberData(regionID, PublicEnums.EnumRegionMemberType.WiFiPhone));
+                return dataList.ToArray();
+            }
+            else
+            {
+                return new RegionBLL().GetRegionMemberData(regionID, MemberType);
+            }
+
+            #region testData
+
             List<T> testData = new List<T>();
 
-            //for (int i = 0; i < 150; i++)
-            //{
-            //    testData.Add(new RegionBillInfo()
-            //    {
-            //        ID = i,
-            //        MemberType = this.MemberType,
-            //        Name = MemberType.ToString() + i,
-            //        Number = i.ToString(),
-            //        OraNumber = MemberType.ToString() + i,
-            //        PrimaryKey = MemberType.ToString() + i
-            //    });
-            //}
             if (MemberType == CommControl.PublicEnums.EnumRegionMemberType.WiFiPhone)
             {
                 testData.Add(new T()
@@ -193,6 +195,8 @@ namespace DispatchPlatform.Region
                 });
             }
             return testData.ToArray();
+
+            #endregion
         }
 
         public CommControl.PublicEnums.EnumRegionMemberType MemberType
@@ -237,11 +241,17 @@ namespace DispatchPlatform.Region
 
         public void ClickOpeate(object sender, EventArgs e)
         {
-
+            FormCameraView cameraView = new FormCameraView();
+            cameraView.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            cameraView.ShowDialog();
         }
 
         public RegionMemberInfo[] LoadData(int regionID)
         {
+            return new RegionBLL().GetRegionMemberData(regionID, MemberType);
+
+            #region TestData
+
             List<T> list = new List<T>();
             list.Add(new T()
             {
@@ -250,7 +260,7 @@ namespace DispatchPlatform.Region
                 MemberType = this.MemberType,
                 PrimaryKey = "Camera1",
                 Number = "camera1",
-                ChanelID = 1
+                ChannelID = 1
             });
             list.Add(new T()
             {
@@ -259,9 +269,11 @@ namespace DispatchPlatform.Region
                 MemberType = this.MemberType,
                 PrimaryKey = "Camera2",
                 Number = "camera2",
-                ChanelID = 2
+                ChannelID = 2
             });
             return list.ToArray();
+
+            #endregion
         }
 
         public CommControl.PublicEnums.EnumRegionMemberType MemberType

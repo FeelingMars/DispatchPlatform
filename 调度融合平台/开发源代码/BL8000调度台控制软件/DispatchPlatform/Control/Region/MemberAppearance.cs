@@ -71,7 +71,14 @@ namespace DispatchPlatform.Region
     {
         internal override Bitmap GetShowImageByState(TalkControl.EnumUserLineStatus status = TalkControl.EnumUserLineStatus.None)
         {
-            return DispatchPlatform.Properties.Resources.n_OnLine;
+            if (status == TalkControl.EnumUserLineStatus.Offline)
+            {
+                return DispatchPlatform.Properties.Resources.n_OffLine;
+            }
+            else
+            {
+                return DispatchPlatform.Properties.Resources.n_OnLine;
+            }
         }
     }
 

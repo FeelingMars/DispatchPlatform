@@ -118,6 +118,12 @@
     <Compile Include="Control\DispatchCommandBar.Designer.cs">
       <DependentUpon>DispatchCommandBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Region\FormCameraView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Control\Region\FormCameraView.Designer.cs">
+      <DependentUpon>FormCameraView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Region\FromRegionView.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,8 @@
     </Compile>
     <Compile Include="Control\Region\IRegionMemberOperate.cs" />
     <Compile Include="Control\Region\MemberAppearance.cs" />
+    <Compile Include="Control\Region\NVRConnectControl.cs" />
+    <Compile Include="Control\Region\RegionBLL.cs" />
     <Compile Include="Control\Region\RegionMemberGroupControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -259,6 +267,7 @@
     <Compile Include="Control\SingleUserControl.Designer.cs">
       <DependentUpon>SingleUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="SDK\CHCNetSDK.cs" />
     <Compile Include="SDK\HTPhoneSDK.cs" />
     <Compile Include="SDK\TalkControl.cs" />
     <Compile Include="FormWelcome.cs">
@@ -294,6 +303,9 @@
     </Compile>
     <EmbeddedResource Include="Control\DispatchCommandBar.resx">
       <DependentUpon>DispatchCommandBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Region\FormCameraView.resx">
+      <DependentUpon>FormCameraView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\Region\FromRegionView.resx">
       <DependentUpon>FromRegionView.cs</DependentUpon>

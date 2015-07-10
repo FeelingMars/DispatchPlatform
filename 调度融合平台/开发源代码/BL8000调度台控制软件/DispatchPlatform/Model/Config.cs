@@ -12,11 +12,11 @@ namespace DispatchPlatform
     {
         public static ConfigModel GetModel()
         {
-            XMLHelper xml = new XMLHelper(Application.StartupPath+"\\Config.xml");
+            XMLHelper xml = new XMLHelper(Application.StartupPath + "\\Config.xml");
             ConfigModel model = new ConfigModel();
             //model.ServerIP = xml.GetItem("MBoxIP", "10.20.31.1");
             model.LocalIP = xml.GetItem("LocalIP", "127.0.0.1");
-         
+
             model.Title = xml.GetItem("Title", "调度通讯软件");
             model.DBServer = xml.GetItem("DBServer", ".");
             model.DBName = xml.GetItem("DBName", "BW_VoiceDispatch");
@@ -24,7 +24,7 @@ namespace DispatchPlatform
             model.DBPassword = xml.GetItem("DBPassword", "kj222");
             model.LastUser = xml.GetItem("LastUser", "");
             model.AlarmMusicUrl = xml.GetItem("AlarmMusicUrl", "alarm.wav");
-            model.CheckBoxOnLineInterval =int.Parse( xml.GetItem("CheckBoxOnLineInterval", "60"));
+            model.CheckBoxOnLineInterval = int.Parse(xml.GetItem("CheckBoxOnLineInterval", "60"));
             model.VideoSize = int.Parse(xml.GetItem("VideoSize", "1"));
 
             model.SortByDepartment = bool.Parse(xml.GetItem("SortByDepartment", "false"));
@@ -46,7 +46,7 @@ namespace DispatchPlatform
 
             model.TalkLogSearchDays = int.Parse(xml.GetItem("TalkLogSearchDays", "30"));
 
-          //  model.IpBrocastSendInterval = int.Parse(xml.GetItem("IpBrocastSendInterval", "60"));
+            //  model.IpBrocastSendInterval = int.Parse(xml.GetItem("IpBrocastSendInterval", "60"));
 
             model.WriteSDKLog = bool.Parse(xml.GetItem("WriteSDKLog", "false"));
             model.IsVideoCall = bool.Parse(xml.GetItem("IsVideoCall", "false"));
@@ -59,12 +59,17 @@ namespace DispatchPlatform
 
             model.OutsideNumberMaxLength = int.Parse(xml.GetItem("TalkLogSearchDays", "6"));
             model.BoxIP = xml.GetItem("BoxIP", "");
+            model.NVRLoadIP = xml.GetItem("NVRLoadIP", "172.0.0.1");
+            model.NVRLoadPort = Convert.ToInt32(xml.GetItem("NVRLoadPort", "0"));
+            model.NVRLoadName = xml.GetItem("NVRLoadName", "");
+            model.NVRLoadPassword = xml.GetItem("NVRLoadPassword", "");
+
             return model;
         }
 
         public static bool WriteModel(ConfigModel model)
         {
-            XMLHelper xml = new XMLHelper(Application.StartupPath+"\\Config.xml");
+            XMLHelper xml = new XMLHelper(Application.StartupPath + "\\Config.xml");
 
             xml.SetItem("LocalIP", model.LocalIP);
             xml.SetItem("DBServer", model.DBServer);
@@ -100,7 +105,7 @@ namespace DispatchPlatform
         /// <summary>
         /// 最大会议成员数
         /// </summary>
-       // public int MaxMeetingMember { get; set; }
+        // public int MaxMeetingMember { get; set; }
 
         /// <summary>
         /// 标题
@@ -166,13 +171,13 @@ namespace DispatchPlatform
 
         public bool SortByID = true;
 
-        public  bool SortByOnline = false;
+        public bool SortByOnline = false;
 
-        public  bool SortByNumber = false;
+        public bool SortByNumber = false;
 
-        public  bool SortByName = false;
+        public bool SortByName = false;
 
-        public  bool SortByDepartment = false;
+        public bool SortByDepartment = false;
 
         /// <summary>通话记录查询天数</summary>
         public int TalkLogSearchDays { get; set; }
@@ -180,7 +185,7 @@ namespace DispatchPlatform
         /// <summary>
         /// IP广播数据发送间隔
         /// </summary>
-       // public int IpBrocastSendInterval { get; set; }
+        // public int IpBrocastSendInterval { get; set; }
         /// <summary>
         /// 显示列数
         /// </summary>
@@ -215,5 +220,20 @@ namespace DispatchPlatform
         //public string FontSet6 { get; set; }
         //public string FontSet7 { get; set; }
         //public string FontSet8 { get; set; }
+
+        //yucf add
+        /// <summary>
+        /// NVR登陆IP
+        /// </summary>
+        public string NVRLoadIP { get; set; }
+        /// <summary>
+        /// NVR登陆端口
+        /// </summary>
+        public int NVRLoadPort { get; set; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string NVRLoadName { get; set; }
+        public string NVRLoadPassword { get; set; }
     }
 }

@@ -83,30 +83,49 @@ namespace DispatchPlatform.Region
             Tag = tag;
             if (tag is RegionCallInfo)
             {
-                (tag as RegionCallInfo).ProrertyChanged += new EventHandler<Event.PropertyChangedEventArgs>(RegionMemberControl_ProrertyChanged);
+                tag.ProrertyChanged += new EventHandler<Event.PropertyChangedEventArgs>(PhoneControl_ProrertyChanged);
+            }
+            else if (tag is RegionCameraInfo)
+            {
+                tag.ProrertyChanged += new EventHandler<Event.PropertyChangedEventArgs>(CameraControl_ProrertyChanged);
             }
             this.Load += new EventHandler(SingleUserControl_Load);
 
             InitInnerControl();
         }
-        private void All_Click(object sender, EventArgs e)
-        {
-            base.OnClick(e);
-        }
-        private void RegionMemberControl_ProrertyChanged(object sender, Event.PropertyChangedEventArgs e)
+
+        void CameraControl_ProrertyChanged(object sender, Event.PropertyChangedEventArgs e)
         {
             if (this.InvokeRequired)
             {
-                UpdatePropertyDelegate del = UpdateProperty;
+                UpdatePropertyDelegate del = UpdateCameraProperty;
                 this.Invoke(del, new object[] { e.Index });
             }
             else
             {
-                UpdateProperty(e.Index);
+                UpdateCameraProperty(e.Index);
+            }
+        }
+        private void PhoneControl_ProrertyChanged(object sender, Event.PropertyChangedEventArgs e)
+        {
+            if (this.InvokeRequired)
+            {
+                UpdatePropertyDelegate del = UpdatePhoneProperty;
+                this.Invoke(del, new object[] { e.Index });
+            }
+            else
+            {
+                UpdatePhoneProperty(e.Index);
             }
         }
 
-        private void UpdateProperty(int index)
+        private void UpdateCameraProperty(int index)
+        {
+            UpdateUserLineStatue((Tag as RegionCallInfo).UserLineStatus);
+            InnerUpdateControlFont();
+        }
+
+        private void UpdatePhoneProperty(int index)
         {
             lblSelfName.Text = Tag.Name;
             if (index == 0)
@@ -323,6 +342,11 @@ namespace DispatchPlatform.Region
             }
         }
 
+        private void All_Click(object sender, EventArgs e)
+        {
+            base.OnClick(e);
+        }
+
         #region 事件处理
 
         private void SingleUserControl_Load(object sender, EventArgs e)
@@ -408,35 +432,38 @@ namespace DispatchPlatform.Region
 
         private void InnerUpdateControlFont()
         {
-            FontSizeConfig size = GetFontSizeConfig();
-            lblSelfName.AutoSize = true;
-            lblSelfName.BringToFront();
-            lblSelfName.Font = new System.Drawing.Font("宋体",
-                size.NumberNameFontSize,
-                System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte)(134)));// new Font("宋体", fontSize, FontStyle.Bold);
-            if (lblSelfName.Width > Width)
+            if (this.IsHandleCreated && this.Visible)
             {
-                lblSelfName.Left = 0;
-            }
-            else
-            {
-                //居中显示 
-                lblSelfName.Left = (Width - lblSelfName.Width) / 2;
-            }
+                FontSizeConfig size = GetFontSizeConfig();
+                lblSelfName.AutoSize = true;
+                lblSelfName.BringToFront();
+                lblSelfName.Font = new System.Drawing.Font("宋体",
+                    size.NumberNameFontSize,
+                    System.Drawing.FontStyle.Bold,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(134)));// new Font("宋体", fontSize, FontStyle.Bold);
+                if (lblSelfName.Width > Width)
+                {
+                    lblSelfName.Left = 0;
+                }
+                else
+                {
+                    //居中显示 
+                    lblSelfName.Left = (Width - lblSelfName.Width) / 2;
+                }
 
-            lblSelfNumber.AutoSize = true;
-            lblSelfNumber.Font = new System.Drawing.Font("宋体", size.NumberNameFontSize,
-                System.Drawing.FontStyle.Bold,
-                System.Drawing.GraphicsUnit.Point, ((byte)(134)));// new Font("宋体", fontSize, FontStyle.Bold);
-            lblSelfNumber.Top = lblSelfName.Top + lblSelfName.Height + size.NumberNameInteval;
-            lblSelfNumber.Left = (Width - lblSelfNumber.Width) / 2;
+                lblSelfNumber.AutoSize = true;
+                lblSelfNumber.Font = new System.Drawing.Font("宋体", size.NumberNameFontSize,
+                    System.Drawing.FontStyle.Bold,
+                    System.Drawing.GraphicsUnit.Point, ((byte)(134)));// new Font("宋体", fontSize, FontStyle.Bold);
+                lblSelfNumber.Top = lblSelfName.Top + lblSelfName.Height + size.NumberNameInteval;
+                lblSelfNumber.Left = (Width - lblSelfNumber.Width) / 2;
 
-            lblPeerNumber.AutoSize = true;
-            lblPeerNumber.Font = new System.Drawing.Font("宋体", size.NumberNameFontSize,
-                System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));// new Font("宋体", fontSize, FontStyle.Bold);
-            lblPeerNumber.Top = lblSelfNumber.Top + lblSelfNumber.Height + size.NumberNameInteval;
-            lblPeerNumber.Left = (Width - lblPeerNumber.Width) / 2;
+                lblPeerNumber.AutoSize = true;
+                lblPeerNumber.Font = new System.Drawing.Font("宋体", size.NumberNameFontSize,
+                    System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));// new Font("宋体", fontSize, FontStyle.Bold);
+                lblPeerNumber.Top = lblSelfNumber.Top + lblSelfNumber.Height + size.NumberNameInteval;
+                lblPeerNumber.Left = (Width - lblPeerNumber.Width) / 2;
+            }
         }
 
         #endregion

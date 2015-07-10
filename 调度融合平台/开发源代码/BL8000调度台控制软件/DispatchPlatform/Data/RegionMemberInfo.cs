@@ -13,16 +13,22 @@ namespace DispatchPlatform.Data
         internal string Name { get; set; }
         internal string PrimaryKey { get; set; }
         internal string Number { get; set; }
+        internal event EventHandler<PropertyChangedEventArgs> ProrertyChanged;
+        protected void OnPropertyChange(int index)
+        {
+            if (ProrertyChanged != null)
+            {
+                ProrertyChanged(this, new PropertyChangedEventArgs() { Index = index });
+            }
+        }
     }
 
     internal class RegionCallInfo : RegionMemberInfo
     {
-        private string m_DestNumber;
-        private DispatchPlatform.TalkControl.EnumUserLineStatus m_UserLineStatus;
-        private bool m_IsCall;              //主叫、被叫
+        private string m_DestNumber = "";
+        private DispatchPlatform.TalkControl.EnumUserLineStatus m_UserLineStatus = TalkControl.EnumUserLineStatus.Offline;
+        private bool m_IsCall = true;              //主叫、被叫
         private string m_NumberStatus = "";
-
-        internal event EventHandler<PropertyChangedEventArgs> ProrertyChanged;
 
         internal string DestNumber
         {
@@ -64,23 +70,30 @@ namespace DispatchPlatform.Data
             }
         }
 
-        private void OnPropertyChange(int index)
-        {
-            if (ProrertyChanged != null)
-            {
-                ProrertyChanged(this, new PropertyChangedEventArgs() { Index = index });
-            }
-        }
+
     }
 
     internal class RegionCameraInfo : RegionMemberInfo
     {
-        internal int ChanelID { get; set; }
+        private DispatchPlatform.TalkControl.EnumUserLineStatus m_UserLineStatus = TalkControl.EnumUserLineStatus.Offline;
+        internal DispatchPlatform.TalkControl.EnumUserLineStatus UserLineStatus
+        {
+            get { return m_UserLineStatus; }
+            set
+            {
+                m_UserLineStatus = value;
+                OnPropertyChange(1);
+            }
+        }
+        internal int ChannelID { get; set; }
+        internal string ChannelIP { get; set; }
     }
 
     internal class RegionDataInfo
     {
         internal int RegionID { get; set; }
         internal string Name { get; set; }
+        internal string Memo { get; set; }
+        internal int IncludePersonCount { get; set; }
     }
 }

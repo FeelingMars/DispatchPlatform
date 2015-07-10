@@ -39,6 +39,7 @@
             this.btnRegionView = new DevComponents.DotNetBar.ButtonX();
             this.timeControl1 = new DispatchPlatform.Control.TimeControl();
             this.superTabControlRegion = new DevComponents.DotNetBar.SuperTabControl();
+            this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
             this.panel2.SuspendLayout();
             this.panelRight.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.superTabControlRegion)).BeginInit();
@@ -183,6 +184,11 @@
             this.superTabControlRegion.Text = "superTabControl4";
             this.superTabControlRegion.SelectedTabChanging += new System.EventHandler<DevComponents.DotNetBar.SuperTabStripSelectedTabChangingEventArgs>(this.superTabControlRegion_SelectedTabChanging);
             // 
+            // backgroundWorker
+            // 
+            this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker_DoWork);
+            this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorker_RunWorkerCompleted);
+            // 
             // FromRegionView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -218,5 +224,6 @@
         private DevComponents.DotNetBar.LabelX lblTitle;
         private DevComponents.DotNetBar.ButtonX btnExit;
         private DevComponents.DotNetBar.ButtonX buttonClose;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
     }
 }
